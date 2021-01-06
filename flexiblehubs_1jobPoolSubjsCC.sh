@@ -8,4 +8,4 @@ PYTHON="/camcan/anaconda3/envs/chiara_env/bin/python"
 
 
 echo "In flexiblehubs_1job parameters CHUNKLEN=$CHUNKLEN"
-${PYTHON} /camcan/studyforrest/studyforrest/flexibehubsrunCC.py $CHUNKLEN
+${PYTHON} /camcan/studyforrest/studyforrest/flexibehubsrunPoolSubjsCC.py $CHUNKLEN
