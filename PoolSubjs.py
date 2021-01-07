@@ -264,7 +264,7 @@ class poolsubjs:
         # Calculate difference between each subject's mean and grand mean
         dfsubjmean_against_grandmean = df.groupby('subject').transform('mean') - df.mean()
         df2 = df - dfsubjmean_against_grandmean
-        df['MeanBVC']=df2['MeanBVC']
+        df['MeanGVC']=df2['MeanGVC']
         
         
         # Calculate average for each network
