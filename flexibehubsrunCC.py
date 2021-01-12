@@ -9,7 +9,7 @@ import sys
 studyforrest=flexiblehubs.FlexibleHubs('studyforrest',
                                         #datapth='/camcan/cc700/mri/pipeline/release004/data_fMRI_Unsmooth_Craddock/data_fMRI_Unsmooth_Craddock/aamod_roi_extract_epi_00002/$subj/Movie/',
                                         datapth='/camcan/power_parc/',
-                                        subjlist='/camcan/studyforrest/studyforrest/subjlist2.txt',
+                                        subjlist='/camcan/studyforrest/studyforrest/subjlistCC_mo.txt',
                                         filenametemplate='{subj}_shen_264ROI_movie.txt',
                                         fileseparator='\t',
                                         nsess=1,
