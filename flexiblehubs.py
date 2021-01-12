@@ -199,7 +199,7 @@ class FlexibleHubs:
                 # Save results in the subject's folder
                 print('this is allresults:')
                 print(allresults)
-                np.save("NEWallresults_reg_%d_%s"%(chunklen,subj) + ".npy",allresults)
+                np.save("newNEWallresults_reg_%d_%s"%(chunklen,subj) + ".npy",allresults)
 
             # Write what stage and what subjects are done in a text file in the results folder
             now=datetime.datetime.now()
