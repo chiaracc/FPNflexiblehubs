@@ -6,13 +6,13 @@ import sys
 # camcan data
 studyforrest=PoolSubjs.poolsubjs('studyforrest',
                                         #datapth='/camcan/cc700/mri/pipeline/release004/data_fMRI_Unsmooth_Craddock/data_fMRI_Unsmooth_Craddock/aamod_roi_extract_epi_00002/$subj/Movie/',
-                                        datapth='/camcan/power_parc/old_res/',
+                                        datapth='/camcan/FPNflexiblehubs/FPNflexiblehubs/lost_res/camcan/',
                                         subjlist='/camcan/FPNflexiblehubs/FPNflexiblehubs/subjlistCC.txt',
                                         filenametemplate='{subj}_shen_264ROI_movie.txt',
                                         fileseparator='\t',
                                         nsess=1,
                                         nroi=264,
-                                        resultspth='/camcan/results/camcan/new_res/',
+                                        resultspth='/FPNflexiblehubs/FPNflexiblehubs/lost_res/camcan/',
                                         atlaspth='/camcan/FPNflexiblehubs/FPNflexiblehubs/power_networks.csv',
                                         drop_first_column=True,
                                         has_header_row=False,
@@ -39,7 +39,7 @@ studyforrest=PoolSubjs.poolsubjs('studyforrest',
 chunklen=int(sys.argv[1])
 
 # Run stage 3
-studyforrest.stage3_analysis(chunklen, corr=0)
+#studyforrest.stage3_analysis(chunklen, corr=0)
 
 # Run stage 4
 studyforrest.stage4_analysis(chunklen, corr=0)
