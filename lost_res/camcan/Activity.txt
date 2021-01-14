@@ -1,0 +1,11 @@
+
+ Starting stage 4 **Calculate statistics** at 2021-01-14 22:39:11.155173
+ Starting stage 4 **Calculate statistics** at 2021-01-14 22:39:11.197085
+ Starting stage 4 **Calculate statistics** at 2021-01-14 22:39:11.219263
+ Starting stage 4 **Calculate statistics** at 2021-01-14 22:39:11.481309
+ Starting stage 4 **Calculate statistics** at 2021-01-14 22:39:11.604038
+ Finished stage 4 **Calculate statistics** at 2021-01-14 22:39:22.827867
+ Finished stage 4 **Calculate statistics** at 2021-01-14 22:39:22.854438
+ Finished stage 4 **Calculate statistics** at 2021-01-14 22:39:22.902745
+ Finished stage 4 **Calculate statistics** at 2021-01-14 22:39:22.987779
+ Finished stage 4 **Calculate statistics** at 2021-01-14 22:39:23.210758
