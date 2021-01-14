@@ -75,7 +75,7 @@ class FlexibleHubs:
         # Run a correlation model
         if corr==1:
             # If the file that it is being computed during this stage is already there do not start
-            if not os.path.exists(os.path.join(self.datapth,"NEWallresults_corr_%d_%s"%(chunklen,subj) + ".npy")):
+            if not os.path.exists(os.path.join(self.datapth,"allresults_corr_%d_%s"%(chunklen,subj) + ".npy")):
                 # Write what stage and what subjects are starting in a text file in the results folder
                 now=datetime.datetime.now()
                 file = open((os.path.join(self.resultspth,'Activity.txt')),'a') 
@@ -127,7 +127,7 @@ class FlexibleHubs:
                                     #e.g., '1','2','3'... and convert to zero-based integer index for our numpy array (e.g., 0,1,2)
                                     allresultscorr[r][int(df.columns[roi1])-1][int(df.columns[roi2])-1] = np.array(listofcoef)
                 print(allresultscorr)
-                np.save("NEWallresults_corr_%d_%s"%(chunklen,subj) + ".npy",allresultscorr)
+                np.save("allresults_corr_%d_%s"%(chunklen,subj) + ".npy",allresultscorr)
 
             # Write what stage and what subjects are starting in a text file in the results folder
             now=datetime.datetime.now()
@@ -138,7 +138,7 @@ class FlexibleHubs:
         # Run a regression model
         else:
             # If the file that it is being computed during this stage is already there do not start this subject
-            if not os.path.exists(os.path.join(self.datapth,"newNEWallresults_reg_%d_%s"%(chunklen,subj) + ".npy")):
+            if not os.path.exists(os.path.join(self.datapth,"allresults_reg_%d_%s"%(chunklen,subj) + ".npy")):
                 # Write what stage and what subjects are starting in a text file in the results folder
                 now=datetime.datetime.now()
                 file = open((os.path.join(self.resultspth,'Activity.txt')),'a') 
@@ -199,7 +199,7 @@ class FlexibleHubs:
                 # Save results in the subject's folder
                 print('this is allresults:')
                 print(allresults)
-                np.save("newNEWallresults_reg_%d_%s"%(chunklen,subj) + ".npy",allresults)
+                np.save("allresults_reg_%d_%s"%(chunklen,subj) + ".npy",allresults)
 
             # Write what stage and what subjects are done in a text file in the results folder
             now=datetime.datetime.now()
