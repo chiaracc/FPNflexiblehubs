@@ -207,6 +207,7 @@ class poolsubjs:
         ax.set_ylabel("Mean BVC", fontsize=16)
         plt.title('BVC')
         plt.xlabel('')
+        plt.ylim(0, 0.6)
         ax.set_ylabel("Mean BVC", fontsize=16)
         plt.grid(False)
         if corr==1:
@@ -226,7 +227,7 @@ class poolsubjs:
             plt.xlabel('')
             ax.set_ylabel("Mean BVC", fontsize=16)
             plt.title('BVC')
-            plt.ylim(0, 0.30)
+            plt.ylim(0, 0.6)
             plt.grid(False)
             outFile = "BarPlotBVCcorr.png"
             plt.savefig((os.path.join(self.resultspth,'BarPlotBVCcorr%d'%(chunklen) + '.png')), dpi=200)
@@ -247,6 +248,12 @@ class poolsubjs:
             dfmeansubj.to_csv(os.path.join(self.resultspth,'finalresultpersubjBVCcorr%d'%(chunklen) + '.csv'))
         else:
             dfmeansubj.to_csv(os.path.join(self.resultspth,'finalresultpersubjBVCreg%d'%(chunklen) + '.csv'))
+        # Calculate SD per network, across all subjects
+        dfmeansubj=df.groupby(['net2']).std()
+        if corr==1:
+            dfmeansubj.to_csv(os.path.join(self.resultspth,'finalresultSDpersubjBVCcorr%d'%(chunklen) + '.csv'))
+        else:
+            dfmeansubj.to_csv(os.path.join(self.resultspth,'finalresultSDpersubjBVCreg%d'%(chunklen) + '.csv'))
 
 ############ GVC
 
@@ -356,6 +363,12 @@ class poolsubjs:
             dfmeansubj.to_csv(os.path.join(self.resultspth,'finalresultpersubjGVCcorr%d'%(chunklen) + '.csv'))
         else:
             dfmeansubj.to_csv(os.path.join(self.resultspth,'finalresultpersubjGVCreg%d'%(chunklen) + '.csv'))
+        # Calculate SD per network, across all subjects
+        dfmeansubj=df.groupby(['net2']).std()
+        if corr==1:
+            dfmeansubj.to_csv(os.path.join(self.resultspth,'finalresultSDpersubjBVCcorr%d'%(chunklen) + '.csv'))
+        else:
+            dfmeansubj.to_csv(os.path.join(self.resultspth,'finalresultSDpersubjBVCreg%d'%(chunklen) + '.csv'))
 
         # Write in a text file inside the results' folder what stage is done
         now=datetime.datetime.now()
