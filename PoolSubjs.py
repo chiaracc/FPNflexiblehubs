@@ -207,7 +207,7 @@ class poolsubjs:
         ax.set_ylabel("Mean BVC", fontsize=16)
         plt.title('BVC')
         plt.xlabel('')
-        plt.ylim(0, 0.6)
+        plt.ylim(0, 0.7)
         ax.set_ylabel("Mean BVC", fontsize=16)
         plt.grid(False)
         if corr==1:
@@ -227,7 +227,7 @@ class poolsubjs:
             plt.xlabel('')
             ax.set_ylabel("Mean BVC", fontsize=16)
             plt.title('BVC')
-            plt.ylim(0, 0.6)
+            plt.ylim(0, 0.7)
             plt.grid(False)
             outFile = "BarPlotBVCcorr.png"
             plt.savefig((os.path.join(self.resultspth,'BarPlotBVCcorr%d'%(chunklen) + '.png')), dpi=200)
@@ -236,7 +236,7 @@ class poolsubjs:
             plt.xlabel('')
             ax.set_ylabel("Mean BVC", fontsize=16)
             plt.title('BVC')
-            plt.ylim(0, 0.30)
+            plt.ylim(0, 0.7)
             plt.grid(False)
             outFile = "BarPlotBVC.png"
             plt.savefig((os.path.join(self.resultspth,'BarPlotBVCreg%d'%(chunklen) + '.png')), dpi=200)
@@ -248,6 +248,7 @@ class poolsubjs:
             dfmeansubj.to_csv(os.path.join(self.resultspth,'finalresultpersubjBVCcorr%d'%(chunklen) + '.csv'))
         else:
             dfmeansubj.to_csv(os.path.join(self.resultspth,'finalresultpersubjBVCreg%d'%(chunklen) + '.csv'))
+            
         # Calculate SD per network, across all subjects
         dfmeansubj=df.groupby(['net2']).std()
         if corr==1:
@@ -320,6 +321,7 @@ class poolsubjs:
         plt.title('GVC')
         plt.xlabel('')
         plt.grid(False)
+        plt.ylim(0, 0.6)
        
         
         if corr==1:
@@ -340,7 +342,7 @@ class poolsubjs:
             plt.xlabel('')
             ax.set_ylabel("Mean GVC", fontsize=16)
             plt.title('GVC')
-            plt.ylim(0, 0.30)
+            plt.ylim(0, 0.6))
             plt.grid(False)
             outFile = 'BarPlotGVCcorr%d'%(chunklen) + '.png'
             plt.savefig((os.path.join(self.resultspth,'BarPlotGVCcorr%d'%(chunklen) + '.png')), dpi=200)
@@ -349,9 +351,8 @@ class poolsubjs:
             plt.xlabel('')
             ax.set_ylabel("Mean GVC", fontsize=16)
             plt.title('GVC')
-            plt.ylim(0, 0.30)
+            plt.ylim(0, 0.6)
             plt.grid(False)
-            plt.ylim((0,0.550))
             outFile = 'BarPlotGVC%d'%(chunklen) + '.png'
             plt.savefig((os.path.join(self.resultspth,'BarPlotGVCreg%d'%(chunklen) + '.png')), dpi=200)
             print(("Figure saved as {0}".format(outFile)))
@@ -366,9 +367,9 @@ class poolsubjs:
         # Calculate SD per network, across all subjects
         dfmeansubj=df.groupby(['net2']).std()
         if corr==1:
-            dfmeansubj.to_csv(os.path.join(self.resultspth,'finalresultSDpersubjBVCcorr%d'%(chunklen) + '.csv'))
+            dfmeansubj.to_csv(os.path.join(self.resultspth,'finalresultSDpersubjGVCcorr%d'%(chunklen) + '.csv'))
         else:
-            dfmeansubj.to_csv(os.path.join(self.resultspth,'finalresultSDpersubjBVCreg%d'%(chunklen) + '.csv'))
+            dfmeansubj.to_csv(os.path.join(self.resultspth,'finalresultSDpersubjGVCreg%d'%(chunklen) + '.csv'))
 
         # Write in a text file inside the results' folder what stage is done
         now=datetime.datetime.now()
