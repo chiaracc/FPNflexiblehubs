@@ -342,7 +342,7 @@ class poolsubjs:
             plt.xlabel('')
             ax.set_ylabel("Mean GVC", fontsize=16)
             plt.title('GVC')
-            plt.ylim(0, 0.6))
+            plt.ylim(0, 0.6)
             plt.grid(False)
             outFile = 'BarPlotGVCcorr%d'%(chunklen) + '.png'
             plt.savefig((os.path.join(self.resultspth,'BarPlotGVCcorr%d'%(chunklen) + '.png')), dpi=200)
