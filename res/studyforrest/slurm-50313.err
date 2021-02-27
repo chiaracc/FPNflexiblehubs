@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "/camcan/FPNflexiblehubs/FPNflexiblehubs/flexiblehubsrunPoolSubjsSF.py", line 2, in <module>
+    import PoolSubjs
+  File "/camcan/FPNflexiblehubs/FPNflexiblehubs/PoolSubjs.py", line 345
+    plt.ylim(0, 0.6))
+                    ^
+SyntaxError: unmatched ')'
