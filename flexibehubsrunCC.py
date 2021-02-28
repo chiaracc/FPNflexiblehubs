@@ -1,13 +1,10 @@
 import argparse
-import PoolSubjs
 import flexiblehubs
 import sys
 
 
 # camcan data
-#studyforrest=PoolSubjs.poolsubjs('studyforrest',
 studyforrest=flexiblehubs.FlexibleHubs('studyforrest',
-                                        #datapth='/camcan/cc700/mri/pipeline/release004/data_fMRI_Unsmooth_Craddock/data_fMRI_Unsmooth_Craddock/aamod_roi_extract_epi_00002/$subj/Movie/',
                                         datapth='/camcan/power_parc/',
                                         subjlist='/camcan/studyforrest/studyforrest/subjlistCC_mo.txt',
                                         filenametemplate='{subj}_shen_264ROI_movie.txt',
