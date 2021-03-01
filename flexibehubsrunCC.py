@@ -6,7 +6,7 @@ import sys
 # camcan data
 studyforrest=flexiblehubs.FlexibleHubs('studyforrest',
                                         datapth='/camcan/power_parc/',
-                                        subjlist='/camcan/studyforrest/studyforrest/subjlistCC_mo.txt',
+                                        subjlist='/camcan/studyforrest/studyforrest/subjlistCC.txt',
                                         filenametemplate='{subj}_shen_264ROI_movie.txt',
                                         fileseparator='\t',
                                         nsess=1,
