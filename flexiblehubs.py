@@ -197,7 +197,8 @@ class FlexibleHubs:
                 # Save results in the subject's folder
                 print('this is allresults:')
                 #print(allresults)
-                np.save("allresults_reg_%d_%s"%(chunklen,subj) + ".npy",allresults)
+                (os.path.join(self.datapth,filename)
+                np.save((os.path.join(self.datapth,"allresults_reg_%d_%s"%(chunklen,subj) + ".npy")),allresults)
                 print(os.path.join(self.datapth,"allresults_reg_%d_%s"%(chunklen,subj) + ".npy"))
 
             # Write what stage and what subjects are done in a text file in the results folder
