@@ -129,6 +129,7 @@ class FlexibleHubs:
                 print(allresultscorr)
                 np.save("allresults_corr_%d_%s"%(chunklen,subj) + ".npy",allresultscorr)
 
+
             # Write what stage and what subjects are starting in a text file in the results folder
             now=datetime.datetime.now()
             file = open((os.path.join(self.resultspth,'Activity.txt')),'a') 
@@ -144,12 +145,12 @@ class FlexibleHubs:
                 file = open((os.path.join(self.resultspth,'Activity.txt')),'a') 
                 file.write("\n Starting stage 1 ** Build and run the regression model ** for subject %s  with chunklen %d"%(subj,chunklen) + " at " + str(now))
                 file.close()
-                # Set the right directory
-                os.chdir(self.datapth)
                 now=datetime.datetime.now()
                 file = open((os.path.join(self.resultspth,'Activity.txt')),'a') 
                 file.write("\n Starting stage 1 ** Still running for subj** for subject %s with chunklen %d"%(subj,chunklen) + " at " + str(now))
                 file.close()
+                # Set the right directory
+                os.chdir(self.datapth)
                 # Create a numpy array for the results of the regression
                 allresults=np.ndarray((self.nsess,self.nroi,self.nroi),dtype=np.object)
                 # For every run
@@ -200,6 +201,7 @@ class FlexibleHubs:
                 print('this is allresults:')
                 print(allresults)
                 np.save("allresults_reg_%d_%s"%(chunklen,subj) + ".npy",allresults)
+                print(os.path.join(self.datapth,"allresults_reg_%d_%s"%(chunklen,subj) + ".npy"))
 
             # Write what stage and what subjects are done in a text file in the results folder
             now=datetime.datetime.now()
