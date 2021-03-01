@@ -30,9 +30,6 @@ from statsmodels.stats.multicomp import (pairwise_tukeyhsd,
                                          )
 from statsmodels.stats.anova import anova_lm
 
-#chunklenght=15
-#networks=11
-
 class FlexibleHubs:
     datapth=None
     atlaspth=None
