@@ -197,7 +197,6 @@ class FlexibleHubs:
                 # Save results in the subject's folder
                 print('this is allresults:')
                 #print(allresults)
-                (os.path.join(self.datapth,filename)
                 np.save((os.path.join(self.datapth,"allresults_reg_%d_%s"%(chunklen,subj) + ".npy")),allresults)
                 print(os.path.join(self.datapth,"allresults_reg_%d_%s"%(chunklen,subj) + ".npy"))
 
