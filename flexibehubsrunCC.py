@@ -43,7 +43,7 @@ else:
     subj=(sys.argv[2])
 
 # Run stage 1
-studyforrest.stage1_analysis(chunklen, subj, corr=0)
+#studyforrest.stage1_analysis(chunklen, subj, corr=0)
 
 # Run stage 2
 studyforrest.stage2_analysis(chunklen, subj, corr=0)
