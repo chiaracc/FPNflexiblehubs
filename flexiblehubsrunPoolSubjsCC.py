@@ -6,7 +6,7 @@ import sys
 # camcan data
 studyforrest=PoolSubjs.poolsubjs('studyforrest',
                                         #datapth='/camcan/cc700/mri/pipeline/release004/data_fMRI_Unsmooth_Craddock/data_fMRI_Unsmooth_Craddock/aamod_roi_extract_epi_00002/$subj/Movie/',
-                                        datapth='/camcan/FPNflexiblehubs/FPNflexiblehubs/lost_res/camcan/',
+                                        datapth='/camcan/power_parc/',
                                         subjlist='/camcan/FPNflexiblehubs/FPNflexiblehubs/subjlistCC.txt',
                                         filenametemplate='{subj}_shen_264ROI_movie.txt',
                                         fileseparator='\t',
