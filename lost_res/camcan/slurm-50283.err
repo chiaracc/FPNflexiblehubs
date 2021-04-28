@@ -1,6 +1,0 @@
-Traceback (most recent call last):
-  File "/camcan/FPNflexiblehubs/FPNflexiblehubs/flexiblehubsrunPoolSubjsCC.py", line 45, in <module>
-    studyforrest.stage4_analysis(chunklen, corr=0)
-  File "/camcan/FPNflexiblehubs/FPNflexiblehubs/PoolSubjs.py", line 146, in stage4_analysis
-    file = open((os.path.join(self.resultspth,'Activity.txt')),'a') 
-FileNotFoundError: [Errno 2] No such file or directory: '/FPNflexiblehubs/FPNflexiblehubs/lost_res/camcan/Activity.txt'
