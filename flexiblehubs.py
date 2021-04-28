@@ -266,7 +266,7 @@ class FlexibleHubs:
                 file.close()
                 print ("Starting stage 2 ** Summarize results from the correlation ** for subject %s"%(subj) + " at " + str(now))
                 # Load the results from the previous stage
-                res=np.load(os.path.join(self.datapth,"NEWallresults_reg_%d_%s"%(chunklen,subj) + ".npy"), allow_pickle=True)
+                res=np.load(os.path.join(self.datapth,"allresults_reg_%d_%s"%(chunklen,subj) + ".npy"), allow_pickle=True)
                 print(res)
                 # Create a numpy array for storing results of this stage
                 stdevresults=np.ndarray((self.nroi,self.nroi),dtype=np.object)
