@@ -287,8 +287,7 @@ class FlexibleHubs:
                                 # Select the right betas in the vector beta and append them to the list of betas across all sessions 
                                 # Get only the betas we need - the last ones
                                 betaPairwise=(int((nbeta-1)/2))
-                                newlist=beta[betaPairwise+1:]
-                                newlist=[i for i in beta if abs(1-i) > (10e-6)]
+                                newlist=[i for i in beta[betaPairwise+1:] if abs(1-i) > (10e-6)]
                                 betaslist.extend(newlist)
                                 
                         if betaslist:       
