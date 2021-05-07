@@ -42,6 +42,6 @@ else:
 #studyforrest.stage1_analysis(chunklen, subj, corr=1)
 
 # Run stage 2
-studyforrest.stage2_analysis(chunklen, subj, corr=1)
+studyforrest.stage2_analysis(chunklen, subj, corr=0)
 
 
