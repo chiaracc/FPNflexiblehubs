@@ -8,6 +8,6 @@ do
   for subj in `cat ${subjdir}`
   do
     echo "Requesting chunklen $chunklen for subject $subj"
-    sbatch --export=CHUNKLEN=$chunklen,SUBJ=$subj /camcan/studyforrest/studyforrest/flexiblehubs_1job.sh  
+    sbatch --export=CHUNKLEN=$chunklen,SUBJ=$subj /camcan/FPNflexiblehubs/FPNflexiblehubs/flexiblehubs_1jobSF.sh  
   done
 done
