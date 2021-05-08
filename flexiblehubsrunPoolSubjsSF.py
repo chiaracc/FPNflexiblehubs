@@ -5,13 +5,12 @@ import sys
 # studyforrest data
 studyforrest=PoolSubjs.poolsubjs('studyforrest',
                                         datapth='/camcan/sf_parc_278',
-                                        #subjlist='/camcan/FPNflexiblehubs/FPNflexiblehubs/subjlistmo.txt',
                                         subjlist='/camcan/FPNflexiblehubs/FPNflexiblehubs/subjlistSF.txt',
                                         filenametemplate='{subj}_task-avmovie_run-{sess0}_bold.csv', # {subj} will be replaced by subject; {sess0} will be replaced by session number (first session=0); {sess1} will be replaced by session number (first sess=1)
                                         fileseparator=',',
                                         nsess=8,
                                         nroi=278,
-                                        resultspth='/camcan/results_rep/studyforrest/',
+                                        resultspth='/camcan/FPNflexiblehubs/FPNflexiblehubs/res/studyforrest',
                                         atlaspth='/camcan/SFdata/atlases/shen_to_power.csv',
                                         drop_first_column=False,
                                         has_header_row=True,
