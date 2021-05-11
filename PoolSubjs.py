@@ -364,7 +364,7 @@ class poolsubjs:
             outFileScatter = 'ScatterPlotGVCcorr%d'%(chunklen) + '.png'
             plt.savefig((os.path.join(self.resultspth,'ScatterPlotGVCcorr%d'%(chunklen) + '.png')), dpi=200)
         else:
-            outFileViolin = 'ViolinPlotGVC%d'%(chunklen) + '.png'
+            outFileScatter = 'ViolinPlotGVC%d'%(chunklen) + '.png'
             plt.savefig((os.path.join(self.resultspth,'ScatterPlotGVCreg%d'%(chunklen) + '.png')), dpi=200)
         print("Figure saved as {0}".format(outFileScatter))
         
