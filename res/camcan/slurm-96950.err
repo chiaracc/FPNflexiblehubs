@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "/camcan/FPNflexiblehubs/FPNflexiblehubs/flexiblehubsrunPoolSubjsCC.py", line 45, in <module>
+    studyforrest.stage4_analysis(chunklen, corr=0)
+  File "/camcan/FPNflexiblehubs/FPNflexiblehubs/PoolSubjs.py", line 357, in stage4_analysis
+    ax.set_ylabel("Mean GVC", fontsize=16)
+AttributeError: 'PathCollection' object has no attribute 'set_ylabel'
