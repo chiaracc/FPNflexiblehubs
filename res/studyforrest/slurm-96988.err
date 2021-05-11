@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "/camcan/FPNflexiblehubs/FPNflexiblehubs/flexiblehubsrunPoolSubjsSF.py", line 44, in <module>
+    studyforrest.stage4_analysis(chunklen, corr=0)
+  File "/camcan/FPNflexiblehubs/FPNflexiblehubs/PoolSubjs.py", line 371, in stage4_analysis
+    ax=pt.half_violinplot(x="net2", y="MeanGVC", data=dfmean, palette = custom_p, bw = .2, cut = 0., scale = "area", width = .6, inner = None)
+NameError: name 'pt' is not defined

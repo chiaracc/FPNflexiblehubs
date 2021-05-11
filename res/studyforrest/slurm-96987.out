@@ -5,7 +5,7 @@ Index: []
 Empty DataFrame
 Columns: [subject, net1, net2, MeanGVC]
 Index: []
-Starting stage 3 ** Assign ROIs to networks ** for subject sub-01, chunklen 60 at 2021-05-11 10:40:33.052545
+Starting stage 3 ** Assign ROIs to networks ** for subject sub-01, chunklen 60 at 2021-05-11 13:12:46.909834
              0            1    ...          276          277
 0    5.74878e-16      0.23614  ...     0.298426     0.292598
 1       0.232167  1.07375e-15  ...     0.232102     0.176242
@@ -20,7 +20,7 @@ Starting stage 3 ** Assign ROIs to networks ** for subject sub-01, chunklen 60 a
 277     0.298963     0.182866  ...     0.309396  1.28166e-15
 
 [278 rows x 278 columns]
-Starting stage 3 ** Assign ROIs to networks ** for subject sub-02, chunklen 60 at 2021-05-11 10:40:39.111701
+Starting stage 3 ** Assign ROIs to networks ** for subject sub-02, chunklen 60 at 2021-05-11 13:12:52.993290
              0            1    ...          276          277
 0    1.08431e-15     0.199306  ...     0.270903     0.266836
 1       0.203666  6.54236e-16  ...     0.207722     0.224393
@@ -35,7 +35,7 @@ Starting stage 3 ** Assign ROIs to networks ** for subject sub-02, chunklen 60 a
 277     0.261672        0.209  ...     0.222496  6.60951e-16
 
 [278 rows x 278 columns]
-Starting stage 3 ** Assign ROIs to networks ** for subject sub-03, chunklen 60 at 2021-05-11 10:40:45.232243
+Starting stage 3 ** Assign ROIs to networks ** for subject sub-03, chunklen 60 at 2021-05-11 13:12:59.097198
              0            1    ...          276          277
 0    1.34148e-15     0.327296  ...     0.334759     0.274952
 1       0.353918  9.34221e-16  ...     0.361845     0.271802
@@ -50,7 +50,7 @@ Starting stage 3 ** Assign ROIs to networks ** for subject sub-03, chunklen 60 a
 277     0.283667     0.245386  ...     0.263448  9.62263e-16
 
 [278 rows x 278 columns]
-Starting stage 3 ** Assign ROIs to networks ** for subject sub-04, chunklen 60 at 2021-05-11 10:40:51.388910
+Starting stage 3 ** Assign ROIs to networks ** for subject sub-04, chunklen 60 at 2021-05-11 13:13:05.259260
              0            1    ...          276          277
 0    9.14477e-16     0.301014  ...     0.405116     0.301991
 1       0.308675  9.79229e-16  ...     0.420531     0.277576
@@ -65,7 +65,7 @@ Starting stage 3 ** Assign ROIs to networks ** for subject sub-04, chunklen 60 a
 277     0.301758     0.262369  ...     0.294837  6.65881e-16
 
 [278 rows x 278 columns]
-Starting stage 3 ** Assign ROIs to networks ** for subject sub-05, chunklen 60 at 2021-05-11 10:40:57.516932
+Starting stage 3 ** Assign ROIs to networks ** for subject sub-05, chunklen 60 at 2021-05-11 13:13:11.396321
              0            1            2    ...          275          276        277
 0    1.10739e-15     0.187406     0.200502  ...     0.237479     0.171328   0.168429
 1       0.181958  1.66022e-15     0.407637  ...     0.242186     0.316896   0.385792
@@ -80,7 +80,7 @@ Starting stage 3 ** Assign ROIs to networks ** for subject sub-05, chunklen 60 a
 277      0.16118     0.392619     0.395781  ...      0.20268     0.244924  1.119e-15
 
 [278 rows x 278 columns]
-Starting stage 3 ** Assign ROIs to networks ** for subject sub-06, chunklen 60 at 2021-05-11 10:41:03.705754
+Starting stage 3 ** Assign ROIs to networks ** for subject sub-06, chunklen 60 at 2021-05-11 13:13:17.562729
              0            1    ...          276          277
 0    1.46819e-15     0.293028  ...     0.326662     0.354131
 1       0.268512  9.75437e-16  ...     0.266611     0.228725
@@ -95,7 +95,7 @@ Starting stage 3 ** Assign ROIs to networks ** for subject sub-06, chunklen 60 a
 277     0.358425       0.2441  ...     0.330794  1.06822e-15
 
 [278 rows x 278 columns]
-Starting stage 3 ** Assign ROIs to networks ** for subject sub-09, chunklen 60 at 2021-05-11 10:41:09.671591
+Starting stage 3 ** Assign ROIs to networks ** for subject sub-09, chunklen 60 at 2021-05-11 13:13:23.582005
              0            1    ...          276          277
 0    1.44882e-15     0.241094  ...      0.27069     0.215893
 1       0.215137  1.15755e-15  ...     0.209845     0.245442
@@ -110,7 +110,7 @@ Starting stage 3 ** Assign ROIs to networks ** for subject sub-09, chunklen 60 a
 277     0.172533     0.228835  ...      0.26443  8.65946e-16
 
 [278 rows x 278 columns]
-Starting stage 3 ** Assign ROIs to networks ** for subject sub-10, chunklen 60 at 2021-05-11 10:41:15.783863
+Starting stage 3 ** Assign ROIs to networks ** for subject sub-10, chunklen 60 at 2021-05-11 13:13:29.716583
              0            1            2    ...        275          276          277
 0    1.32026e-15     0.224839     0.243556  ...   0.255583     0.256329     0.327313
 1        0.22912  1.11458e-15     0.348506  ...   0.235458     0.251517     0.250646
@@ -125,7 +125,7 @@ Starting stage 3 ** Assign ROIs to networks ** for subject sub-10, chunklen 60 a
 277     0.319615     0.224611     0.216006  ...   0.202353     0.314663  4.65079e-16
 
 [278 rows x 278 columns]
-Starting stage 3 ** Assign ROIs to networks ** for subject sub-14, chunklen 60 at 2021-05-11 10:41:21.902067
+Starting stage 3 ** Assign ROIs to networks ** for subject sub-14, chunklen 60 at 2021-05-11 13:13:35.858863
              0            1    ...          276          277
 0    1.00628e-15     0.229105  ...     0.262182     0.243075
 1        0.25402  1.27269e-15  ...      0.29749     0.240147
@@ -140,7 +140,7 @@ Starting stage 3 ** Assign ROIs to networks ** for subject sub-14, chunklen 60 a
 277     0.232645     0.205715  ...     0.332563  1.31507e-15
 
 [278 rows x 278 columns]
-Starting stage 3 ** Assign ROIs to networks ** for subject sub-15, chunklen 60 at 2021-05-11 10:41:28.048321
+Starting stage 3 ** Assign ROIs to networks ** for subject sub-15, chunklen 60 at 2021-05-11 13:13:42.046201
              0           1    ...          276          277
 0    8.26646e-16    0.220234  ...       0.2364     0.244604
 1       0.192051  1.2836e-15  ...     0.175393     0.218903
@@ -155,7 +155,7 @@ Starting stage 3 ** Assign ROIs to networks ** for subject sub-15, chunklen 60 a
 277     0.244029    0.231874  ...     0.241335  8.62413e-16
 
 [278 rows x 278 columns]
-Starting stage 3 ** Assign ROIs to networks ** for subject sub-16, chunklen 60 at 2021-05-11 10:41:34.213876
+Starting stage 3 ** Assign ROIs to networks ** for subject sub-16, chunklen 60 at 2021-05-11 13:13:48.206569
              0           1            2    ...         275          276          277
 0    9.57053e-16    0.252255     0.250271  ...    0.315829     0.328591     0.290979
 1       0.267903  1.2619e-15     0.334655  ...    0.268337     0.339407     0.281987
@@ -170,7 +170,7 @@ Starting stage 3 ** Assign ROIs to networks ** for subject sub-16, chunklen 60 a
 277     0.293582    0.262868     0.262568  ...    0.238805      0.29139  5.64648e-16
 
 [278 rows x 278 columns]
-Starting stage 3 ** Assign ROIs to networks ** for subject sub-17, chunklen 60 at 2021-05-11 10:41:40.373837
+Starting stage 3 ** Assign ROIs to networks ** for subject sub-17, chunklen 60 at 2021-05-11 13:13:54.399171
              0            1    ...          276          277
 0    1.23362e-15     0.211463  ...     0.239264     0.289626
 1       0.215309  1.07354e-15  ...     0.258756     0.217271
@@ -185,7 +185,7 @@ Starting stage 3 ** Assign ROIs to networks ** for subject sub-17, chunklen 60 a
 277     0.272857     0.173185  ...     0.261275  1.04193e-15
 
 [278 rows x 278 columns]
-Starting stage 3 ** Assign ROIs to networks ** for subject sub-18, chunklen 60 at 2021-05-11 10:41:46.563932
+Starting stage 3 ** Assign ROIs to networks ** for subject sub-18, chunklen 60 at 2021-05-11 13:14:00.561478
              0            1    ...          276          277
 0    1.10299e-15     0.247147  ...     0.218262     0.213768
 1       0.229632  4.27106e-16  ...     0.217396     0.197974
@@ -200,7 +200,7 @@ Starting stage 3 ** Assign ROIs to networks ** for subject sub-18, chunklen 60 a
 277     0.193994     0.165745  ...     0.299791  9.09493e-16
 
 [278 rows x 278 columns]
-Starting stage 3 ** Assign ROIs to networks ** for subject sub-19, chunklen 60 at 2021-05-11 10:41:52.726271
+Starting stage 3 ** Assign ROIs to networks ** for subject sub-19, chunklen 60 at 2021-05-11 13:14:06.712822
              0            1    ...          276          277
 0    8.45751e-16     0.219816  ...     0.237751     0.311062
 1       0.229854  6.64289e-16  ...     0.213771     0.193269
@@ -215,7 +215,7 @@ Starting stage 3 ** Assign ROIs to networks ** for subject sub-19, chunklen 60 a
 277     0.298304     0.201564  ...     0.309903  9.28818e-16
 
 [278 rows x 278 columns]
-Starting stage 3 ** Assign ROIs to networks ** for subject sub-20, chunklen 60 at 2021-05-11 10:41:58.877787
+Starting stage 3 ** Assign ROIs to networks ** for subject sub-20, chunklen 60 at 2021-05-11 13:14:12.893185
              0            1    ...          276          277
 0    9.55837e-16      0.20232  ...     0.305909     0.332876
 1       0.200657  9.67578e-16  ...     0.315934     0.251957
@@ -258,7 +258,7 @@ Starting stage 3 ** Assign ROIs to networks ** for subject sub-20, chunklen 60 a
 1814  sub-20  Whole Brain  Whole Brain  0.239505
 
 [1815 rows x 4 columns]
-Starting stage 4 **Calculate statistics** at 2021-05-11 10:42:05.059863
+Starting stage 4 **Calculate statistics** at 2021-05-11 13:14:19.117195
      subject         net1   net2   MeanBVC
 0     sub-01          FPN    CON  0.213403
 1     sub-01          FPN    SAN  0.213728
@@ -453,4 +453,4 @@ group1    group2     stat   pval  pval_corr reject
 --------------------------------------------------
 Figure saved as ViolinPlotGVC60.png
 Figure saved as BarPlotGVC60.png
-Figure saved as ViolinPlotGVC60.png
+Figure saved as JitterPlotGVC.png
