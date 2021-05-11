@@ -341,7 +341,8 @@ class poolsubjs:
             outFile = 'BarPlotGVCcorr%d'%(chunklen) + '.png'
             plt.savefig((os.path.join(self.resultspth,'BarPlotGVCcorr%d'%(chunklen) + '.png')), dpi=200)
         else:
-            ax = sns.barplot(x="net2", y="MeanGVC", data=dfmean, ci=68, palette=custom_p, capsize=.2, order=["FPN", "CON", "SAN", "DAN", "VAN", "DMN", "Motor", "Aud.", "Vis.", "Subc."])
+            #ax = sns.barplot(x="net2", y="MeanGVC", data=dfmean, ci=68, palette=custom_p, capsize=.2, order=["FPN", "CON", "SAN", "DAN", "VAN", "DMN", "Motor", "Aud.", "Vis.", "Subc."])
+            ax=sns.stripplot(x="net2", y="MeanGVC", data=dfmean, palette=custom_p)
             plt.xlabel('')
             ax.set_ylabel("Mean GVC", fontsize=16)
             plt.title('GVC')
@@ -359,7 +360,6 @@ class poolsubjs:
         plt.xlabel('')
         plt.grid(False)
         plt.ylim(0, 0.6)
-       
         if corr==1:
             outFileScatter = 'ScatterPlotGVCcorr%d'%(chunklen) + '.png'
             plt.savefig((os.path.join(self.resultspth,'ScatterPlotGVCcorr%d'%(chunklen) + '.png')), dpi=200)
@@ -368,6 +368,7 @@ class poolsubjs:
             plt.savefig((os.path.join(self.resultspth,'ScatterPlotGVCreg%d'%(chunklen) + '.png')), dpi=200)
         print("Figure saved as {0}".format(outFileScatter))
         
+        ax=sns.stripplot(x="net2", y="MeanGVC", data=dfmean, palette=custom_p)
         
         # Calculate average per network, across all subjects
         dfmeansubj=df.groupby(['net2']).mean()
