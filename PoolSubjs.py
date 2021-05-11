@@ -353,26 +353,26 @@ class poolsubjs:
             print(("Figure saved as {0}".format(outFile)))
 
         # Jitter plot
-        ax=sns.stripplot(x="net2", y="MeanBVC", data=dfmean, palette = custom_p, edgecolor = "white", size = 3, jitter = 1, zorder = 0)
+        ax=sns.stripplot(x="net2", y="MeanGVC", data=dfmean, palette = custom_p, edgecolor = "white", size = 3, jitter = 1, zorder = 0)
         plt.ylim(0, 0.60)
         plt.xlabel('')
-        ax.set_ylabel("Mean BVC", fontsize=16)
-        plt.title('BVC')
+        ax.set_ylabel("Mean GVC", fontsize=16)
+        plt.title('GVC')
         if corr==1:
-            outFileJitter = "JitterPlotBVCcorr.png"
-            plt.savefig((os.path.join(self.resultspth,'JitterPlotBVCcorr%d'%(chunklen) + '.png')), dpi=200)
+            outFileJitter = "JitterPlotGVCcorr.png"
+            plt.savefig((os.path.join(self.resultspth,'JitterPlotGVCcorr%d'%(chunklen) + '.png')), dpi=200)
         else:
-            outFileJitter = "JitterPlotBVC.png"
-            plt.savefig((os.path.join(self.resultspth,'JitterPlotBVCreg%d'%(chunklen) + '.png')), dpi=200)
+            outFileJitter = "JitterPlotGVC.png"
+            plt.savefig((os.path.join(self.resultspth,'JitterPlotGVCreg%d'%(chunklen) + '.png')), dpi=200)
         print(("Figure saved as {0}".format(outFileJitter)))
 
         # Adding semiviolin
         f, ax = plt.subplots(figsize=(7, 5))
-        ax=pt.half_violinplot(x="net2", y="MeanBVC", data=dfmean, palette = custom_p, bw = .2, cut = 0., scale = "area", width = .6, inner = None)
-        ax=sns.stripplot(x="net2", y="MeanBVC", data=dfmean, palette = custom_p, edgecolor = "white", size = 3, jitter = 1, zorder = 0)
+        ax=pt.half_violinplot(x="net2", y="MeanGVC", data=dfmean, palette = custom_p, bw = .2, cut = 0., scale = "area", width = .6, inner = None)
+        ax=sns.stripplot(x="net2", y="MeanGVC", data=dfmean, palette = custom_p, edgecolor = "white", size = 3, jitter = 1, zorder = 0)
         plt.ylim(0, 0.60)
         plt.xlabel('')
-        ax.set_ylabel("Mean BVC", fontsize=16)
+        ax.set_ylabel("Mean GVC", fontsize=16)
         plt.title('GVC')
         
         # Calculate average per network, across all subjects
@@ -381,6 +381,7 @@ class poolsubjs:
             dfmeansubj.to_csv(os.path.join(self.resultspth,'finalresultpersubjGVCcorr%d'%(chunklen) + '.csv'))
         else:
             dfmeansubj.to_csv(os.path.join(self.resultspth,'finalresultpersubjGVCreg%d'%(chunklen) + '.csv'))
+        
         # Calculate SD per network, across all subjects
         dfmeansubj=df.groupby(['net2']).std()
         if corr==1:
