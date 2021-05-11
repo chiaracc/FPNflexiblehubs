@@ -353,7 +353,7 @@ class poolsubjs:
 
         # Scatter plot
         plt.figure()
-        ax = plt.scatter(x="net2", y="MeanGVC", data=dfmean, palette=custom_p, order=["FPN", "CON", "SAN", "DAN", "VAN", "DMN", "Motor", "Aud.", "Vis.", "Subc."])
+        ax = plt.scatter(x="net2", y="MeanGVC", data=dfmean, order=["FPN", "CON", "SAN", "DAN", "VAN", "DMN", "Motor", "Aud.", "Vis.", "Subc."])
         ax.set_ylabel("Mean GVC", fontsize=16)
         plt.title('GVC')
         plt.xlabel('')
