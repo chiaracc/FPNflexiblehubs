@@ -242,6 +242,36 @@ class poolsubjs:
             plt.savefig((os.path.join(self.resultspth,'BarPlotBVCreg%d'%(chunklen) + '.png')), dpi=200)
         print(("Figure saved as {0}".format(outFile)))
         
+        # Jitter plot
+        ax=sns.stripplot(x="net2", y="MeanBVC", data=dfmean, palette = custom_p, edgecolor = "white", size = 3, jitter = 1, zorder = 0)
+        plt.ylim(0, 0.60)
+        plt.xlabel('')
+        ax.set_ylabel("Mean BVC", fontsize=16)
+        plt.title('BVC')
+        if corr==1:
+            outFileJitter = "JitterPlotBVCcorr.png"
+            plt.savefig((os.path.join(self.resultspth,'JitterPlotBVCcorr%d'%(chunklen) + '.png')), dpi=200)
+        else:
+            outFileJitter = "JitterPlotBVC.png"
+            plt.savefig((os.path.join(self.resultspth,'JitterPlotBVCreg%d'%(chunklen) + '.png')), dpi=200)
+        print(("Figure saved as {0}".format(outFileJitter)))
+
+        # Adding semiviolin
+        f, ax = plt.subplots(figsize=(7, 5))
+        ax=pt.half_violinplot(x="net2", y="MeanBVC", data=dfmean, palette = custom_p, bw = .2, cut = 0., scale = "area", width = .6, inner = None)
+        ax=sns.stripplot(x="net2", y="MeanBVC", data=dfmean, palette = custom_p, edgecolor = "white", size = 3, jitter = 1, zorder = 0)
+        plt.ylim(0, 0.60)
+        plt.xlabel('')
+        ax.set_ylabel("Mean BVC", fontsize=16)
+        plt.title('GVC')
+        if corr==1:
+            outFileRaincloud = "RaincloudPlotBVCcorr.png"
+            plt.savefig((os.path.join(self.resultspth,'RaincloudPlotBVCcorr%d'%(chunklen) + '.png')), dpi=200)
+        else:
+            outFileRaincloud = "RaincloudPlotBVC.png"
+            plt.savefig((os.path.join(self.resultspth,'RaincloudPlotBVCreg%d'%(chunklen) + '.png')), dpi=200)
+        print(("Figure saved as {0}".format(outFileRaincloud)))
+        
         # Calculate average per network, across all subjects
         dfmeansubj=df.groupby(['net2']).mean()
         if corr==1:
@@ -374,6 +404,13 @@ class poolsubjs:
         plt.xlabel('')
         ax.set_ylabel("Mean GVC", fontsize=16)
         plt.title('GVC')
+        if corr==1:
+            outFileRaincloud = "RaincloudPlotGVCcorr.png"
+            plt.savefig((os.path.join(self.resultspth,'RaincloudPlotGVCcorr%d'%(chunklen) + '.png')), dpi=200)
+        else:
+            outFileRaincloud = "RaincloudPlotGVC.png"
+            plt.savefig((os.path.join(self.resultspth,'RaincloudPlotGVCreg%d'%(chunklen) + '.png')), dpi=200)
+        print(("Figure saved as {0}".format(outFileRaincloud)))
         
         # Calculate average per network, across all subjects
         dfmeansubj=df.groupby(['net2']).mean()
