@@ -354,7 +354,7 @@ class poolsubjs:
         # Scatter plot
         plt.figure()
         ax = plt.scatter(x="net2", y="MeanGVC", data=dfmean)
-        ax.set_ylabel("Mean GVC", fontsize=16)
+        plt.ylabel("Mean GVC", fontsize=16)
         plt.title('GVC')
         plt.xlabel('')
         plt.grid(False)
