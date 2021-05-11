@@ -322,8 +322,6 @@ class poolsubjs:
         plt.xlabel('')
         plt.grid(False)
         plt.ylim(0, 0.6)
-       
-        
         if corr==1:
             outFileViolin = 'ViolinPlotGVCcorr%d'%(chunklen) + '.png'
             plt.savefig((os.path.join(self.resultspth,'ViolinPlotGVCcorr%d'%(chunklen) + '.png')), dpi=200)
@@ -332,11 +330,7 @@ class poolsubjs:
             plt.savefig((os.path.join(self.resultspth,'ViolinPlotGVCreg%d'%(chunklen) + '.png')), dpi=200)
         print("Figure saved as {0}".format(outFileViolin))
 
-
-        plt.figure()
-
-        # Bar plot
-        
+        # Bar plot   
         if corr==1:
             ax = sns.barplot(x="net2", y="MeanGVC", data=dfmean, ci=68, palette=custom_p, capsize=.2, order=["FPN", "CON", "SAN", "DAN", "VAN", "DMN", "Motor", "Aud.", "Vis.", "Subc."])
             plt.xlabel('')
@@ -359,7 +353,7 @@ class poolsubjs:
 
         # Scatter plot
         plt.figure()
-        ax = plt.scatter(x="net2", y="MeanGVC", data=dfmean, ci=68, palette=custom_p, order=["FPN", "CON", "SAN", "DAN", "VAN", "DMN", "Motor", "Aud.", "Vis.", "Subc."])
+        ax = plt.scatter(x="net2", y="MeanGVC", data=dfmean, palette=custom_p, order=["FPN", "CON", "SAN", "DAN", "VAN", "DMN", "Motor", "Aud.", "Vis.", "Subc."])
         ax.set_ylabel("Mean GVC", fontsize=16)
         plt.title('GVC')
         plt.xlabel('')
