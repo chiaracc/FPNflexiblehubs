@@ -339,7 +339,27 @@ class poolsubjs:
 
         
         ###### GRAPHS GVC ######
-
+        # Adding semiviolin
+        
+        ax = sns.violinplot(x="net2", y="MeanGVC", data=dfmean, inner=None,  color=".8")
+        ax = sns.stripplot(x="net2", y="MeanGVC", data=dfmean, edgecolor = "white", size = 3, jitter = 0.75, zorder = 0)
+        
+        
+        #f, ax = plt.subplots(figsize=(7, 5))
+        #ax=pt.half_violinplot(x="net2", y="MeanGVC", data=dfmean, palette = custom_p, bw = .2, cut = 0., scale = "area", width = .6, inner = None)
+        #ax=sns.stripplot(x="net2", y="MeanGVC", data=dfmean, palette = custom_p, edgecolor = "white", size = 3, jitter = 1, zorder = 0)
+        plt.ylim(0, 0.65)
+        plt.xlabel('')
+        ax.set_ylabel("Mean GVC", fontsize=16)
+        plt.title('GVC')
+        if corr==1:
+            outFileRaincloud = "RainViolinPlotGVCcorr.png"
+            plt.savefig((os.path.join(self.resultspth,'RainViolinPlotGVCcorr%d'%(chunklen) + '.png')), dpi=200)
+        else:
+            outFileRaincloud = "RainViolinPlotGVC.png"
+            plt.savefig((os.path.join(self.resultspth,'RainViolinPlotGVCreg%d'%(chunklen) + '.png')), dpi=200)
+        print(("Figure saved as {0}".format(outFileRaincloud)))
+        
         # Create a custom color palette for graphs
         colors = ["#F7EA23", "#B51DA3", "#000000", "#1DB526", "#5692BF", "#F31111", "#31A8F1", "#F131DF", "#1B56A6", "#950707"]
         # Set the custom color palette
@@ -397,26 +417,7 @@ class poolsubjs:
             plt.savefig((os.path.join(self.resultspth,'JitterPlotGVCreg%d'%(chunklen) + '.png')), dpi=200)
         print(("Figure saved as {0}".format(outFileJitter)))
 
-        # Adding semiviolin
-        
-        ax = sns.violinplot(x="net2", y="MeanGVC", data=dfmean, inner=None,  color=".8")
-        ax = sns.stripplot(x="net2", y="MeanGVC", data=dfmean, edgecolor = "white", size = 3, jitter = 1, zorder = 0)
-        
-        
-        #f, ax = plt.subplots(figsize=(7, 5))
-        #ax=pt.half_violinplot(x="net2", y="MeanGVC", data=dfmean, palette = custom_p, bw = .2, cut = 0., scale = "area", width = .6, inner = None)
-        #ax=sns.stripplot(x="net2", y="MeanGVC", data=dfmean, palette = custom_p, edgecolor = "white", size = 3, jitter = 1, zorder = 0)
-        plt.ylim(0, 0.65)
-        plt.xlabel('')
-        ax.set_ylabel("Mean GVC", fontsize=16)
-        plt.title('GVC')
-        if corr==1:
-            outFileRaincloud = "RainViolinPlotGVCcorr.png"
-            plt.savefig((os.path.join(self.resultspth,'RainViolinPlotGVCcorr%d'%(chunklen) + '.png')), dpi=200)
-        else:
-            outFileRaincloud = "RainViolinPlotGVC.png"
-            plt.savefig((os.path.join(self.resultspth,'RainViolinPlotGVCreg%d'%(chunklen) + '.png')), dpi=200)
-        print(("Figure saved as {0}".format(outFileRaincloud)))
+
         
         # Calculate average per network, across all subjects
         dfmeansubj=df.groupby(['net2']).mean()
