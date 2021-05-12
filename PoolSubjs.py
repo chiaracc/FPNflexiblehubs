@@ -197,6 +197,21 @@ class poolsubjs:
             np.savetxt((os.path.join(self.resultspth,'ResultsMultipleComparisonBVCreg%d'%(chunklen) + '.txt')), comp, fmt='%s')
         
         ###### GRAPHS BVC ######
+        # Violin and jitter
+        ax = sns.violinplot(x="net2", y="MeanGVC", data=dfmean, inner=None,  color=".8")
+        ax = sns.stripplot(x="net2", y="MeanGVC", data=dfmean, edgecolor="white", size=3, jitter=1)
+        plt.ylim(0, 0.65)
+        plt.xlabel('')
+        ax.set_ylabel("Mean GVC", fontsize=16)
+        plt.title('GVC')
+        if corr==1:
+            outFileRainViolin = "RainViolinPlotGVC.png"
+            plt.savefig((os.path.join(self.resultspth,'RainViolinPlotBVCcorr%d'%(chunklen) + '.png')), dpi=200)
+        else:
+            outFileRainViolin = "RainViolinPlotGVC.png"
+            plt.savefig((os.path.join(self.resultspth,'RainViolinPlotBVCreg%d'%(chunklen) + '.png')), dpi=200)
+        print(("Figure saved as {0}".format(outFileRaincloud)))
+        
         # Create a custom color palette for graphs
         colors = ["#F7EA23", "#B51DA3", "#000000", "#1DB526", "#5692BF", "#F31111", "#31A8F1", "#F131DF", "#1B56A6", "#950707"]
         # Set the custom color palette
@@ -341,7 +356,7 @@ class poolsubjs:
         ###### GRAPHS GVC ######
         # Violin and jitter
         ax = sns.violinplot(x="net2", y="MeanGVC", data=dfmean, inner=None,  color=".8")
-        ax = sns.stripplot(x="net2", y="MeanGVC", data=dfmean, edgecolor="white", size=3, jitter=0.8)
+        ax = sns.stripplot(x="net2", y="MeanGVC", data=dfmean, edgecolor="white", size=3, jitter=1)
         plt.ylim(0, 0.65)
         plt.xlabel('')
         ax.set_ylabel("Mean GVC", fontsize=16)
