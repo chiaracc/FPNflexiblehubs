@@ -41,7 +41,7 @@ class poolsubjs:
     drop_first_column=None
     has_header_row=None
 
-    def __init__(self,name,datapth=None,atlaspth=None,nsess=None,nroi=None,resultspth=None,network_dict=None,subjlist=None,  filenametemplate=None, fileseparator='\t', drop_first_column=None, has_header_row=None):
+    def __init__(self,name,datapth=None,atlaspth=None,nsess=None,nroi=None,resultspth=None,network_dict=None,subjlist=None,filenametemplate=None,fileseparator='\t',drop_first_column=None,has_header_row=None):
         self.name=poolsubjs
         self.mainpath=resultspth
         self.datapth=datapth
@@ -355,7 +355,7 @@ class poolsubjs:
         
         ###### GRAPHS GVC ######
         # Violin and jitter
-        ax = sns.violinplot(x="net2", y="MeanGVC", data=dfmean, inner=None,  color=".8")
+        ax = sns.violinplot(x="net2", y="MeanGVC", data=dfmean, color=".8")
         ax = sns.stripplot(x="net2", y="MeanGVC", data=dfmean, edgecolor="white", size=2, jitter=True)
         plt.ylim(0, 0.65)
         plt.xlabel('')
