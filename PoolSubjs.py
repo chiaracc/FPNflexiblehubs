@@ -400,7 +400,7 @@ class poolsubjs:
         # Adding semiviolin
         
         ax = sns.violinplot(x="net2", y="MeanGVC", data=dfmean, inner=None,  color=".8")
-        ax = sns.stripplot(x="net2", y="MeanGVC", data=dfmean, palette = custom_p, edgecolor = "white", size = 3, jitter = 0.5, zorder = 0)
+        ax = sns.stripplot(x="net2", y="MeanGVC", data=dfmean, edgecolor = "white", size = 3, jitter = 1, zorder = 0)
         
         
         #f, ax = plt.subplots(figsize=(7, 5))
@@ -412,10 +412,10 @@ class poolsubjs:
         plt.title('GVC')
         if corr==1:
             outFileRaincloud = "RainViolinPlotGVCcorr.png"
-            plt.savefig((os.path.join(self.resultspth,'RaincloudPlotGVCcorr%d'%(chunklen) + '.png')), dpi=200)
+            plt.savefig((os.path.join(self.resultspth,'RainViolinPlotGVCcorr%d'%(chunklen) + '.png')), dpi=200)
         else:
             outFileRaincloud = "RainViolinPlotGVC.png"
-            plt.savefig((os.path.join(self.resultspth,'RaincloudPlotGVCreg%d'%(chunklen) + '.png')), dpi=200)
+            plt.savefig((os.path.join(self.resultspth,'RainViolinPlotGVCreg%d'%(chunklen) + '.png')), dpi=200)
         print(("Figure saved as {0}".format(outFileRaincloud)))
         
         # Calculate average per network, across all subjects
