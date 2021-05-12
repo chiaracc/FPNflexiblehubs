@@ -244,36 +244,7 @@ class poolsubjs:
             outFile = "BarPlotBVC.png"
             plt.savefig((os.path.join(self.resultspth,'BarPlotBVCreg%d'%(chunklen) + '.png')), dpi=200)
         print(("Figure saved as {0}".format(outFile)))
-        
-        # Jitter plot
-        ax=sns.stripplot(x="net2", y="MeanBVC", data=dfmean, palette = custom_p, edgecolor = "white", size = 3, jitter = 1, zorder = 0)
-        plt.ylim(0, 0.60)
-        plt.xlabel('')
-        ax.set_ylabel("Mean BVC", fontsize=16)
-        plt.title('BVC')
-        if corr==1:
-            outFileJitter = "JitterPlotBVCcorr.png"
-            plt.savefig((os.path.join(self.resultspth,'JitterPlotBVCcorr%d'%(chunklen) + '.png')), dpi=200)
-        else:
-            outFileJitter = "JitterPlotBVC.png"
-            plt.savefig((os.path.join(self.resultspth,'JitterPlotBVCreg%d'%(chunklen) + '.png')), dpi=200)
-        print(("Figure saved as {0}".format(outFileJitter)))
 
-        # Adding semiviolin
-        f, ax = plt.subplots(figsize=(7, 5))
-        ax=pt.half_violinplot(x="net2", y="MeanBVC", data=dfmean, palette = custom_p, bw = .2, cut = 0., scale = "area", width = .6, inner = None)
-        ax=sns.stripplot(x="net2", y="MeanBVC", data=dfmean, palette = custom_p, edgecolor = "white", size = 3, jitter = 1, zorder = 0)
-        plt.ylim(0, 0.60)
-        plt.xlabel('')
-        ax.set_ylabel("Mean BVC", fontsize=16)
-        plt.title('GVC')
-        if corr==1:
-            outFileRaincloud = "RaincloudPlotBVCcorr.png"
-            plt.savefig((os.path.join(self.resultspth,'RaincloudPlotBVCcorr%d'%(chunklen) + '.png')), dpi=200)
-        else:
-            outFileRaincloud = "RaincloudPlotBVC.png"
-            plt.savefig((os.path.join(self.resultspth,'RaincloudPlotBVCreg%d'%(chunklen) + '.png')), dpi=200)
-        print(("Figure saved as {0}".format(outFileRaincloud)))
         
         # Calculate average per network, across all subjects
         dfmeansubj=df.groupby(['net2']).mean()
@@ -342,8 +313,8 @@ class poolsubjs:
         
         ###### GRAPHS GVC ######
         # Violin and jitter
-        ax = sns.violinplot(x="net2", y="MeanGVC", data=dfmean, inner="point", color=".8")
-        #ax = sns.stripplot(x="net2", y="MeanGVC", data=dfmean, edgecolor="white", size=2, jitter=1)
+        ax = sns.violinplot(x="net2", y="MeanGVC", data=dfmean, ci=68, color=".8")
+        ax = sns.stripplot(x="net2", y="MeanGVC", data=dfmean, edgecolor="white", size=2, jitter=1)
         plt.ylim(0, 0.65)
         plt.xlabel('')
         ax.set_ylabel("Mean GVC", fontsize=16)
@@ -398,20 +369,6 @@ class poolsubjs:
             outFile = 'BarPlotGVC%d'%(chunklen) + '.png'
             plt.savefig((os.path.join(self.resultspth,'BarPlotGVCreg%d'%(chunklen) + '.png')), dpi=200)
             print(("Figure saved as {0}".format(outFile)))
-
-        # Jitter plot
-        ax=sns.stripplot(x="net2", y="MeanGVC", data=dfmean, palette = custom_p, edgecolor = "white", size = 3, jitter = 0.05, zorder = 0)
-        plt.ylim(0, 0.60)
-        plt.xlabel('')
-        ax.set_ylabel("Mean GVC", fontsize=16)
-        plt.title('GVC')
-        if corr==1:
-            outFileJitter = "JitterPlotGVCcorr.png"
-            plt.savefig((os.path.join(self.resultspth,'JitterPlotGVCcorr%d'%(chunklen) + '.png')), dpi=200)
-        else:
-            outFileJitter = "JitterPlotGVC.png"
-            plt.savefig((os.path.join(self.resultspth,'JitterPlotGVCreg%d'%(chunklen) + '.png')), dpi=200)
-        print(("Figure saved as {0}".format(outFileJitter)))
 
 
         
