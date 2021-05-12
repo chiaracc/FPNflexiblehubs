@@ -356,7 +356,7 @@ class poolsubjs:
         ###### GRAPHS GVC ######
         # Violin and jitter
         ax = sns.violinplot(x="net2", y="MeanGVC", data=dfmean, inner=None,  color=".8")
-        ax = sns.stripplot(x="net2", y="MeanGVC", data=dfmean, edgecolor="white", size=3, jitter=1)
+        ax = sns.stripplot(x="net2", y="MeanGVC", data=dfmean, edgecolor="white", size=2, jitter=True)
         plt.ylim(0, 0.65)
         plt.xlabel('')
         ax.set_ylabel("Mean GVC", fontsize=16)
