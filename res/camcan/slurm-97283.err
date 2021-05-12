@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "/camcan/FPNflexiblehubs/FPNflexiblehubs/flexiblehubsrunPoolSubjsCC.py", line 2, in <module>
+    import PoolSubjs
+  File "/camcan/FPNflexiblehubs/FPNflexiblehubs/PoolSubjs.py", line 316
+    ax = sns.violinplot(x="net2", y="MeanGVC", data=dfmean, color=".8", , scale='area')
+                                                                        ^
+SyntaxError: invalid syntax
