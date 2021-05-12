@@ -341,16 +341,16 @@ class poolsubjs:
         ###### GRAPHS GVC ######
         # Violin and jitter
         ax = sns.violinplot(x="net2", y="MeanGVC", data=dfmean, inner=None,  color=".8")
-        ax = sns.stripplot(x="net2", y="MeanGVC", data=dfmean, edgecolor="white", size=3, jitter=1, zorder=0)
+        ax = sns.stripplot(x="net2", y="MeanGVC", data=dfmean, edgecolor="white", size=3, jitter=0.8)
         plt.ylim(0, 0.65)
         plt.xlabel('')
         ax.set_ylabel("Mean GVC", fontsize=16)
         plt.title('GVC')
         if corr==1:
-            outFileRaincloud = "RainViolinPlotGVCcorr.png"
+            outFileRainViolin = "RainViolinPlotGVC.png"
             plt.savefig((os.path.join(self.resultspth,'RainViolinPlotGVCcorr%d'%(chunklen) + '.png')), dpi=200)
         else:
-            outFileRaincloud = "RainViolinPlotGVC.png"
+            outFileRainViolin = "RainViolinPlotGVC.png"
             plt.savefig((os.path.join(self.resultspth,'RainViolinPlotGVCreg%d'%(chunklen) + '.png')), dpi=200)
         print(("Figure saved as {0}".format(outFileRaincloud)))
         
