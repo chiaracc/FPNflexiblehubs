@@ -313,7 +313,7 @@ class poolsubjs:
         
         ###### GRAPHS GVC ######
         # Violin and jitter
-        ax = sns.violinplot(x="net2", y="MeanGVC", data=dfmean, ci=68, color=".8")
+        ax = sns.violinplot(x="net2", y="MeanGVC", data=dfmean, color=".8", , scale='area')
         ax = sns.stripplot(x="net2", y="MeanGVC", data=dfmean, edgecolor="white", size=2, jitter=1)
         plt.ylim(0, 0.65)
         plt.xlabel('')
@@ -359,8 +359,8 @@ class poolsubjs:
             outFile = 'BarPlotGVCcorr%d'%(chunklen) + '.png'
             plt.savefig((os.path.join(self.resultspth,'BarPlotGVCcorr%d'%(chunklen) + '.png')), dpi=200)
         else:
-            #ax = sns.barplot(x="net2", y="MeanGVC", data=dfmean, ci=68, palette=custom_p, capsize=.2, order=["FPN", "CON", "SAN", "DAN", "VAN", "DMN", "Motor", "Aud.", "Vis.", "Subc."])
-            ax=sns.stripplot(x="net2", y="MeanGVC", data=dfmean, palette=custom_p)
+            ax = sns.barplot(x="net2", y="MeanGVC", data=dfmean, ci=68, palette=custom_p, capsize=.2, order=["FPN", "CON", "SAN", "DAN", "VAN", "DMN", "Motor", "Aud.", "Vis.", "Subc."])
+            #ax=sns.stripplot(x="net2", y="MeanGVC", data=dfmean, palette=custom_p)
             plt.xlabel('')
             ax.set_ylabel("Mean GVC", fontsize=16)
             plt.title('GVC')
