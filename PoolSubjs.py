@@ -325,7 +325,7 @@ class poolsubjs:
         else:
             outFileRainViolin = "RainViolinPlotGVC.png"
             plt.savefig((os.path.join(self.resultspth,'RainViolinPlotGVCreg%d'%(chunklen) + '.png')), dpi=200)
-        print(("Figure saved as {0}".format(outFileRaincloud)))
+        print(("Figure saved as {0}".format(outFileRainViolin)))
         
         # Create a custom color palette for graphs
         colors = ["#F7EA23", "#B51DA3", "#000000", "#1DB526", "#5692BF", "#F31111", "#31A8F1", "#F131DF", "#1B56A6", "#950707"]
