@@ -1,6 +1,0 @@
-Traceback (most recent call last):
-  File "/camcan/FPNflexiblehubs/FPNflexiblehubs/flexiblehubsrunPoolSubjsCC.py", line 45, in <module>
-    studyforrest.stage4_analysis(chunklen, corr=0)
-  File "/camcan/FPNflexiblehubs/FPNflexiblehubs/PoolSubjs.py", line 369, in stage4_analysis
-    print("Figure saved as {0}".format(outFileScatter))
-UnboundLocalError: local variable 'outFileScatter' referenced before assignment
