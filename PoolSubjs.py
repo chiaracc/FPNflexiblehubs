@@ -384,7 +384,7 @@ class poolsubjs:
             print(("Figure saved as {0}".format(outFile)))
 
         # Jitter plot
-        ax=sns.stripplot(x="net2", y="MeanGVC", data=dfmean, palette = custom_p, edgecolor = "white", size = 3, jitter = 1, zorder = 0)
+        ax=sns.stripplot(x="net2", y="MeanGVC", data=dfmean, palette = custom_p, edgecolor = "white", size = 3, jitter = 0.05, zorder = 0)
         plt.ylim(0, 0.60)
         plt.xlabel('')
         ax.set_ylabel("Mean GVC", fontsize=16)
@@ -398,18 +398,23 @@ class poolsubjs:
         print(("Figure saved as {0}".format(outFileJitter)))
 
         # Adding semiviolin
-        f, ax = plt.subplots(figsize=(7, 5))
-        ax=pt.half_violinplot(x="net2", y="MeanGVC", data=dfmean, palette = custom_p, bw = .2, cut = 0., scale = "area", width = .6, inner = None)
-        ax=sns.stripplot(x="net2", y="MeanGVC", data=dfmean, palette = custom_p, edgecolor = "white", size = 3, jitter = 1, zorder = 0)
-        plt.ylim(0, 0.60)
+        
+        ax = sns.violinplot(x="net2", y="MeanGVC", data=dfmean, inner=None,  color=".8")
+        ax = sns.stripplot(x="net2", y="MeanGVC", data=dfmean, palette = custom_p, edgecolor = "white", size = 3, jitter = 0.5, zorder = 0)
+        
+        
+        #f, ax = plt.subplots(figsize=(7, 5))
+        #ax=pt.half_violinplot(x="net2", y="MeanGVC", data=dfmean, palette = custom_p, bw = .2, cut = 0., scale = "area", width = .6, inner = None)
+        #ax=sns.stripplot(x="net2", y="MeanGVC", data=dfmean, palette = custom_p, edgecolor = "white", size = 3, jitter = 1, zorder = 0)
+        plt.ylim(0, 0.65)
         plt.xlabel('')
         ax.set_ylabel("Mean GVC", fontsize=16)
         plt.title('GVC')
         if corr==1:
-            outFileRaincloud = "RaincloudPlotGVCcorr.png"
+            outFileRaincloud = "RainViolinPlotGVCcorr.png"
             plt.savefig((os.path.join(self.resultspth,'RaincloudPlotGVCcorr%d'%(chunklen) + '.png')), dpi=200)
         else:
-            outFileRaincloud = "RaincloudPlotGVC.png"
+            outFileRaincloud = "RainViolinPlotGVC.png"
             plt.savefig((os.path.join(self.resultspth,'RaincloudPlotGVCreg%d'%(chunklen) + '.png')), dpi=200)
         print(("Figure saved as {0}".format(outFileRaincloud)))
         
