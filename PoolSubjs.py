@@ -200,8 +200,7 @@ class poolsubjs:
 
         # Violin and jitter
         ax = sns.violinplot(x="net2", y="MeanBVC", data=dfmean, color=".8", scale='area', width=3)
-        ax = sns.swarmplot(x="net2", y="MeanBVC", data=dfmean, edgecolor="white")
-        #ax = sns.stripplot(x="net2", y="MeanBVC", data=dfmean, edgecolor="white", size=2, jitter=1)
+        ax = sns.stripplot(x="net2", y="MeanBVC", data=dfmean, edgecolor="white", size=2, jitter=1)
         plt.ylim(0, 0.65)
         plt.xlabel('')
         ax.set_ylabel("Mean BVC", fontsize=16)
