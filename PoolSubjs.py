@@ -199,14 +199,14 @@ class poolsubjs:
         ###### GRAPHS BVC ######
 
         # Violin and jitter
-        ax = sns.violinplot(x="net2", y="MeanBVC", data=dfmean, color=".8", width=3.5)
-        ax = sns.stripplot(x="net2", y="MeanBVC", data=dfmean, edgecolor="white", size=2, jitter=1)
+        ax = sns.violinplot(x="net2", y="MeanGVC", data=dfmean, color=".8", scale='area')
+        ax = sns.stripplot(x="net2", y="MeanGVC", data=dfmean, edgecolor="white", size=2, jitter=1) 
         plt.ylim(0, 0.65)
         plt.xlabel('')
         ax.set_ylabel("Mean BVC", fontsize=16)
         plt.title('GVC')
         if corr==1:
-            outFileRainViolin = "RainViolinPlotBVC.png"
+            outFileRainViolin = "RainViolinPlotBVCcorr.png"
             plt.savefig((os.path.join(self.resultspth,'RainViolinPlotBVCcorr%d'%(chunklen) + '.png')), dpi=200)
         else:
             outFileRainViolin = "RainViolinPlotBVC.png"
