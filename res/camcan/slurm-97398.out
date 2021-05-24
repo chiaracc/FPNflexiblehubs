@@ -1,0 +1,97 @@
+In flexiblehubs_1jobPoolSubjsCC parameters CHUNKLEN=45
+Starting stage 4 **Calculate statistics** at 2021-05-24 21:31:38.356052
+        subject         net1   net2   MeanBVC
+0      CC110033          FPN    CON  0.199291
+1      CC110033          FPN    SAN  0.162028
+2      CC110033          FPN    VAN  0.231618
+3      CC110033          FPN    DAN  0.251320
+4      CC110033          FPN    DMN  0.247567
+...         ...          ...    ...       ...
+70835  CC723395  Whole Brain    DMN  0.175692
+70836  CC723395  Whole Brain  Motor  0.200393
+70837  CC723395  Whole Brain   Aud.  0.148801
+70838  CC723395  Whole Brain   Vis.  0.183288
+70839  CC723395  Whole Brain  Subc.  0.173609
+
+[70840 rows x 4 columns]
+       subject         net2   MeanBVC
+0     CC110033         Aud.  0.232918
+1     CC110033          CON  0.157964
+2     CC110033          DAN  0.220845
+3     CC110033          DMN  0.207689
+4     CC110033          FPN  0.206954
+...        ...          ...       ...
+7079  CC723395          SAN  0.185044
+7080  CC723395        Subc.  0.207086
+7081  CC723395          VAN  0.160767
+7082  CC723395         Vis.  0.213835
+7083  CC723395  Whole Brain  0.204215
+
+[7084 rows x 3 columns]
+Anova results for BVC
+              df    sum_sq   mean_sq           F  PR(>F)
+C(net2)     10.0  1.090843  0.109084  249.960411     0.0
+Residual  7073.0  3.086703  0.000436         NaN     NaN
+T-test results for BVC
+Test Multiple Comparison ttest_rel 
+FWER=0.05 method=Holm
+alphacSidak=0.00, alphacBonf=0.001
+===================================================
+group1    group2     stat    pval  pval_corr reject
+---------------------------------------------------
+  Aud.         CON  15.4517    0.0       0.0   True
+  Aud.         DAN  35.6742    0.0       0.0   True
+  Aud.         DMN  12.6353    0.0       0.0   True
+  Aud.         FPN   5.7829    0.0       0.0   True
+  Aud.       Motor  -3.7247 0.0002    0.0018   True
+  Aud.         SAN  14.8483    0.0       0.0   True
+  Aud.       Subc.  15.9357    0.0       0.0   True
+  Aud.         VAN  17.9996    0.0       0.0   True
+  Aud.        Vis.  16.6362    0.0       0.0   True
+  Aud. Whole Brain  15.0691    0.0       0.0   True
+   CON         DAN  13.5246    0.0       0.0   True
+   CON         DMN  -9.6644    0.0       0.0   True
+   CON         FPN -14.1795    0.0       0.0   True
+   CON       Motor  -21.184    0.0       0.0   True
+   CON         SAN  -2.8403 0.0046    0.0232   True
+   CON       Subc.  -0.0327 0.9739       1.0  False
+   CON         VAN   3.7219 0.0002    0.0018   True
+   CON        Vis.  -2.3851 0.0174    0.0694  False
+   CON Whole Brain  -9.3208    0.0       0.0   True
+   DAN         DMN -28.0425    0.0       0.0   True
+   DAN         FPN -25.2858    0.0       0.0   True
+   DAN       Motor -35.2115    0.0       0.0   True
+   DAN         SAN -17.3599    0.0       0.0   True
+   DAN       Subc. -14.1875    0.0       0.0   True
+   DAN         VAN -10.1142    0.0       0.0   True
+   DAN        Vis. -17.6423    0.0       0.0   True
+   DAN Whole Brain -27.8893    0.0       0.0   True
+   DMN         FPN  -6.4697    0.0       0.0   True
+   DMN       Motor -16.3454    0.0       0.0   True
+   DMN         SAN   8.4971    0.0       0.0   True
+   DMN       Subc.   9.9082    0.0       0.0   True
+   DMN         VAN  10.3462    0.0       0.0   True
+   DMN        Vis.  10.8779    0.0       0.0   True
+   DMN Whole Brain   4.6597    0.0       0.0   True
+   FPN       Motor  -10.404    0.0       0.0   True
+   FPN         SAN  13.0696    0.0       0.0   True
+   FPN       Subc.   12.915    0.0       0.0   True
+   FPN         VAN  11.2744    0.0       0.0   True
+   FPN        Vis.  14.6517    0.0       0.0   True
+   FPN Whole Brain  10.1151    0.0       0.0   True
+ Motor         SAN  19.6089    0.0       0.0   True
+ Motor       Subc.  20.8843    0.0       0.0   True
+ Motor         VAN   19.347    0.0       0.0   True
+ Motor        Vis.   21.404    0.0       0.0   True
+ Motor Whole Brain  22.6782    0.0       0.0   True
+   SAN       Subc.   2.3241 0.0204    0.0694  False
+   SAN         VAN    5.318    0.0       0.0   True
+   SAN        Vis.   0.2125 0.8318       1.0  False
+   SAN Whole Brain  -7.5638    0.0       0.0   True
+ Subc.         VAN   3.7445 0.0002    0.0018   True
+ Subc.        Vis.  -3.0885 0.0021    0.0126   True
+ Subc. Whole Brain  -9.4377    0.0       0.0   True
+   VAN        Vis.  -5.3725    0.0       0.0   True
+   VAN Whole Brain  -9.6279    0.0       0.0   True
+  Vis. Whole Brain  -10.351    0.0       0.0   True
+---------------------------------------------------
