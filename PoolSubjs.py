@@ -216,11 +216,11 @@ class poolsubjs:
         
         # Violin with lines
         plt.figure()
-        ax = sns.violinplot(x="net2", y="MeanBVC", data=dfmean, color=".8", scale='area', inner="stick")
+        ax = sns.violinplot(x="net2", y="MeanBVC", data=dfmean, color=".8", scale='area', inner="stick", palette=custom_p)
         plt.ylim(0, 0.65)
         plt.xlabel('')
         ax.set_ylabel("Mean BVC", fontsize=16)
-        plt.title('GVC')
+        plt.title('BVC')
         if corr==1:
             outLineRainViolin = "LineViolinPlotBVCcorr.png"
             plt.savefig((os.path.join(self.resultspth,'LineViolinPlotBVCcorr%d'%(chunklen) + '.png')), dpi=200)
@@ -229,6 +229,21 @@ class poolsubjs:
             plt.savefig((os.path.join(self.resultspth,'LineViolinPlotBVCreg%d'%(chunklen) + '.png')), dpi=200)
         print(("Figure saved as {0}".format(outFileLineViolin)))
         
+        # Violin with dots on the side
+        plt.figure()
+        f, ax = plt.subplots(figsize=(7, 5))
+        ax=pt.half_violinplot(x = "net2", y = "MeanBVC", data = dfmean, bw = .2, cut = 0.,
+                              width = .6, inner = None)
+        plt.ylim(0, 0.65)
+        plt.xlabel('')
+        ax.set_ylabel("Mean BVC", fontsize=16)
+        plt.title('BVC')
+        ax=sns.stripplot(x = "net2", y = "MeanBVC", data = dfmean, palette=custom_p, edgecolor = "white",
+                         size = 3, jitter = 1, zorder = 0)
+        outFileDoublePlot = 'DoublePlot.png'
+        plt.savefig('DoublePlot.png', bbox_inches='tight')
+        print("Figure saved as {0}".format(outFileDoublePlot))
+
         
         # Create a custom color palette for graphs
         colors = ["#F7EA23", "#B51DA3", "#000000", "#1DB526", "#5692BF", "#F31111", "#31A8F1", "#F131DF", "#1B56A6", "#950707"]
