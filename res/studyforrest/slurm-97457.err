@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "/camcan/FPNflexiblehubs/FPNflexiblehubs/flexiblehubsrunPoolSubjsSF.py", line 44, in <module>
+    studyforrest.stage4_analysis(chunklen, corr=0)
+  File "/camcan/FPNflexiblehubs/FPNflexiblehubs/PoolSubjs.py", line 219, in stage4_analysis
+    ax = sns.violinplot(x="net2", y="MeanBVC", data=dfmean, color=".8", scale='area', inner="stick", palette=custom_p)
+UnboundLocalError: local variable 'custom_p' referenced before assignment
