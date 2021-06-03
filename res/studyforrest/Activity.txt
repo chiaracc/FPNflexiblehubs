@@ -31504,3 +31504,15 @@
  Finished stage 3 ** Assign ROIs to networks ** for subject sub-20, chunklen 120 at 2021-05-25 12:02:57.843049
  Finished stage 3 ** Assign ROIs to networks ** for subject sub-20, chunklen 120 at 2021-05-25 12:02:59.662828
  Starting stage 4 **Calculate statistics** at 2021-05-25 12:02:59.707312
+ Starting stage 4 **Calculate statistics** at 2021-06-03 10:43:22.811202
+ Starting stage 4 **Calculate statistics** at 2021-06-03 10:43:23.016950
+ Starting stage 4 **Calculate statistics** at 2021-06-03 10:43:23.031391
+ Finished stage 4 **Calculate statistics** at 2021-06-03 10:43:34.824951
+ Finished stage 4 **Calculate statistics** at 2021-06-03 10:43:34.926418
+ Finished stage 4 **Calculate statistics** at 2021-06-03 10:43:35.178970
+ Starting stage 4 **Calculate statistics** at 2021-06-03 10:43:37.907963
+ Starting stage 4 **Calculate statistics** at 2021-06-03 10:43:37.911723
+ Starting stage 4 **Calculate statistics** at 2021-06-03 10:43:38.204093
+ Finished stage 4 **Calculate statistics** at 2021-06-03 10:43:49.732701
+ Finished stage 4 **Calculate statistics** at 2021-06-03 10:43:49.984401
+ Finished stage 4 **Calculate statistics** at 2021-06-03 10:43:50.211055
