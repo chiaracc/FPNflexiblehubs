@@ -199,8 +199,8 @@ class poolsubjs:
         ###### GRAPHS BVC ######
 
         # Violin and jitter
-        ax = sns.violinplot(x="net2", y="MeanGVC", data=dfmean, color=".8", scale='area')
-        ax = sns.stripplot(x="net2", y="MeanGVC", data=dfmean, edgecolor="white", size=2, jitter=1) 
+        ax = sns.violinplot(x="net2", y="MeanBVC", data=dfmean, color=".8", scale='area')
+        ax = sns.stripplot(x="net2", y="MeanBVC", data=dfmean, edgecolor="white", size=2, jitter=1) 
         plt.ylim(0, 0.65)
         plt.xlabel('')
         ax.set_ylabel("Mean BVC", fontsize=16)
@@ -212,6 +212,20 @@ class poolsubjs:
             outFileRainViolin = "RainViolinPlotBVC.png"
             plt.savefig((os.path.join(self.resultspth,'RainViolinPlotBVCreg%d'%(chunklen) + '.png')), dpi=200)
         print(("Figure saved as {0}".format(outFileRainViolin)))
+        
+        # Violin with lines
+        ax = sns.violinplot(x="net2", y="MeanBVC", data=dfmean, color=".8", scale='area', inner="stick")
+        plt.ylim(0, 0.65)
+        plt.xlabel('')
+        ax.set_ylabel("Mean BVC", fontsize=16)
+        plt.title('GVC')
+        if corr==1:
+            outLineRainViolin = "LineViolinPlotBVCcorr.png"
+            plt.savefig((os.path.join(self.resultspth,'LineViolinPlotBVCcorr%d'%(chunklen) + '.png')), dpi=200)
+        else:
+            outFileLineViolin = "LineViolinPlotBVC.png"
+            plt.savefig((os.path.join(self.resultspth,'LineViolinPlotBVCreg%d'%(chunklen) + '.png')), dpi=200)
+        print(("Figure saved as {0}".format(outFileLineViolin)))
         
         
         # Create a custom color palette for graphs
@@ -347,6 +361,21 @@ class poolsubjs:
         # Set the custom color palette
         custom_p = sns.set_palette(sns.color_palette(colors))
 
+        # Violin with lines
+        ax = sns.violinplot(x="net2", y="MeanGVC", data=dfmean, color=".8", scale='area', inner="stick")
+        plt.ylim(0, 0.65)
+        plt.xlabel('')
+        ax.set_ylabel("Mean BVC", fontsize=16)
+        plt.title('GVC')
+        if corr==1:
+            outLineRainViolin = "LineViolinPlotBVCcorr.png"
+            plt.savefig((os.path.join(self.resultspth,'LineViolinPlotBVCcorr%d'%(chunklen) + '.png')), dpi=200)
+        else:
+            outFileLineViolin = "LineViolinPlotBVC.png"
+            plt.savefig((os.path.join(self.resultspth,'LineViolinPlotBVCreg%d'%(chunklen) + '.png')), dpi=200)
+        print(("Figure saved as {0}".format(outFileLineViolin)))
+        
+        
         # Violin plot
         plt.figure()
         ax = sns.violinplot(x="net2", y="MeanGVC", data=dfmean, ci=68, palette=custom_p, order=["FPN", "CON", "SAN", "DAN", "VAN", "DMN", "Motor", "Aud.", "Vis.", "Subc."])
