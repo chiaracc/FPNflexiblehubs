@@ -245,11 +245,13 @@ class poolsubjs:
         plt.title('BVC')
         ax=sns.stripplot(x = "net2", y = "MeanBVC", data = dfmean, edgecolor = "white",
                          size = 3, jitter = 1, zorder = 0)
-        outFileDoublePlot = 'DoublePlot.png'
-        plt.savefig('DoublePlot.png', bbox_inches='tight')
-        print("Figure saved as {0}".format(outFileDoublePlot))
-
-        
+        if corr==1:
+            outFileDoublePlot = 'DoubleViolinPlotBVCcorr.png'
+            plt.savefig((os.path.join(self.resultspth,'DoubleViolinPlotBVCcorr%d'%(chunklen) + '.png')), dpi=200)
+        else:
+            outFileDoublePlot = 'DoubleViolinPlotBVC.png'
+            plt.savefig((os.path.join(self.resultspth,'DoubleViolinPlotBVCreg%d'%(chunklen) + '.png')), dpi=200)
+        print(("Figure saved as {0}".format(outDoubleViolin))
 
 
         # Violin plot
