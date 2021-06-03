@@ -198,6 +198,11 @@ class poolsubjs:
         
         ###### GRAPHS BVC ######
 
+        # Create a custom color palette for graphs
+        colors = ["#F7EA23", "#B51DA3", "#000000", "#1DB526", "#5692BF", "#F31111", "#31A8F1", "#F131DF", "#1B56A6", "#950707"]
+        # Set the custom color palette
+        custom_p = sns.set_palette(sns.color_palette(colors))
+        
         # Violin and jitter
         plt.figure()
         ax = sns.violinplot(x="net2", y="MeanBVC", data=dfmean, color=".8", scale='area')
@@ -245,10 +250,7 @@ class poolsubjs:
         print("Figure saved as {0}".format(outFileDoublePlot))
 
         
-        # Create a custom color palette for graphs
-        colors = ["#F7EA23", "#B51DA3", "#000000", "#1DB526", "#5692BF", "#F31111", "#31A8F1", "#F131DF", "#1B56A6", "#950707"]
-        # Set the custom color palette
-        custom_p = sns.set_palette(sns.color_palette(colors))
+
 
         # Violin plot
         plt.figure()
