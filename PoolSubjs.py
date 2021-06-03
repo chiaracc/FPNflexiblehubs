@@ -221,7 +221,7 @@ class poolsubjs:
         
         # Violin with lines
         plt.figure()
-        ax = sns.violinplot(x="net2", y="MeanBVC", data=dfmean, color=".8", scale='area', inner="stick", palette=custom_p)
+        ax = sns.violinplot(x="net2", y="MeanBVC", data=dfmean, color=".8", scale='area', inner="stick")
         plt.ylim(0, 0.65)
         plt.xlabel('')
         ax.set_ylabel("Mean BVC", fontsize=16)
@@ -243,7 +243,7 @@ class poolsubjs:
         plt.xlabel('')
         ax.set_ylabel("Mean BVC", fontsize=16)
         plt.title('BVC')
-        ax=sns.stripplot(x = "net2", y = "MeanBVC", data = dfmean, palette=custom_p, edgecolor = "white",
+        ax=sns.stripplot(x = "net2", y = "MeanBVC", data = dfmean, edgecolor = "white",
                          size = 3, jitter = 1, zorder = 0)
         outFileDoublePlot = 'DoublePlot.png'
         plt.savefig('DoublePlot.png', bbox_inches='tight')
@@ -383,7 +383,7 @@ class poolsubjs:
 
         # Violin with lines
         plt.figure()
-        ax = sns.violinplot(x="net2", y="MeanGVC", data=dfmean, color=".8", scale='area', inner="stick")
+        ax = sns.violinplot(x="net2", y="MeanGVC", data=dfmean, scale='area', inner="stick")
         plt.ylim(0, 0.65)
         plt.xlabel('')
         ax.set_ylabel("Mean BVC", fontsize=16)
