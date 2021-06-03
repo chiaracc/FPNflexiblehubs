@@ -199,6 +199,7 @@ class poolsubjs:
         ###### GRAPHS BVC ######
 
         # Violin and jitter
+        plt.figure()
         ax = sns.violinplot(x="net2", y="MeanBVC", data=dfmean, color=".8", scale='area')
         ax = sns.stripplot(x="net2", y="MeanBVC", data=dfmean, edgecolor="white", size=2, jitter=1) 
         plt.ylim(0, 0.65)
@@ -214,6 +215,7 @@ class poolsubjs:
         print(("Figure saved as {0}".format(outFileRainViolin)))
         
         # Violin with lines
+        plt.figure()
         ax = sns.violinplot(x="net2", y="MeanBVC", data=dfmean, color=".8", scale='area', inner="stick")
         plt.ylim(0, 0.65)
         plt.xlabel('')
@@ -342,6 +344,7 @@ class poolsubjs:
         
         ###### GRAPHS GVC ######
         # Violin and jitter
+        plt.figure()
         ax = sns.violinplot(x="net2", y="MeanGVC", data=dfmean, color=".8", scale='area')
         ax = sns.stripplot(x="net2", y="MeanGVC", data=dfmean, edgecolor="white", size=2, jitter=1)
         plt.ylim(0, 0.65)
@@ -362,6 +365,7 @@ class poolsubjs:
         custom_p = sns.set_palette(sns.color_palette(colors))
 
         # Violin with lines
+        plt.figure()
         ax = sns.violinplot(x="net2", y="MeanGVC", data=dfmean, color=".8", scale='area', inner="stick")
         plt.ylim(0, 0.65)
         plt.xlabel('')
@@ -393,6 +397,7 @@ class poolsubjs:
         print("Figure saved as {0}".format(outFileViolin))
 
         # Bar plot   
+        plt.figure()
         if corr==1:
             ax = sns.barplot(x="net2", y="MeanGVC", data=dfmean, ci=68, palette=custom_p, capsize=.2, order=["FPN", "CON", "SAN", "DAN", "VAN", "DMN", "Motor", "Aud.", "Vis.", "Subc."])
             plt.xlabel('')
