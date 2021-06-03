@@ -251,7 +251,7 @@ class poolsubjs:
         else:
             outFileDoublePlot = 'DoubleViolinPlotBVC.png'
             plt.savefig((os.path.join(self.resultspth,'DoubleViolinPlotBVCreg%d'%(chunklen) + '.png')), dpi=200)
-        print(("Figure saved as {0}".format(outDoubleViolin))
+        
 
 
         # Violin plot
