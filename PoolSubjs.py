@@ -237,7 +237,7 @@ class poolsubjs:
         # Violin with dots on the side
         plt.figure()
         f, ax = plt.subplots(figsize=(7, 5))
-        ax=pt.half_violinplot(x = "net2", y = "MeanBVC", data = dfmean, palette=custom_p,  scale='area', order=["FPN", "CON", "SAN", "DAN", "VAN", "DMN", "Motor", "Aud.", "Vis.", "Subc."])
+        ax=pt.half_violinplot(x = "net2", y = "MeanBVC", data = dfmean, palette=custom_p,  scale='area', edgecolor = "white", order=["FPN", "CON", "SAN", "DAN", "VAN", "DMN", "Motor", "Aud.", "Vis.", "Subc."])
         #ax=pt.half_violinplot(x = "net2", y = "MeanBVC", data = dfmean, bw = .2, cut = 0., width = .6, inner = None)
         plt.ylim(0, 0.65)
         plt.xlabel('')
@@ -362,6 +362,11 @@ class poolsubjs:
 
         
         ###### GRAPHS GVC ######
+        # Create a custom color palette for graphs
+        colors = ["#F7EA23", "#B51DA3", "#000000", "#1DB526", "#5692BF", "#F31111", "#31A8F1", "#F131DF", "#1B56A6", "#950707"]
+        # Set the custom color palette
+        custom_p = sns.set_palette(sns.color_palette(colors))
+        
         # Violin and jitter
         plt.figure()
         ax = sns.violinplot(x="net2", y="MeanGVC", data=dfmean, color=".8", scale='area')
@@ -378,10 +383,7 @@ class poolsubjs:
             plt.savefig((os.path.join(self.resultspth,'RainViolinPlotGVCreg%d'%(chunklen) + '.png')), dpi=200)
         print(("Figure saved as {0}".format(outFileRainViolin)))
         
-        # Create a custom color palette for graphs
-        colors = ["#F7EA23", "#B51DA3", "#000000", "#1DB526", "#5692BF", "#F31111", "#31A8F1", "#F131DF", "#1B56A6", "#950707"]
-        # Set the custom color palette
-        custom_p = sns.set_palette(sns.color_palette(colors))
+
 
         # Violin with lines
         plt.figure()
@@ -397,6 +399,24 @@ class poolsubjs:
             outFileLineViolin = "LineViolinPlotBVC.png"
             plt.savefig((os.path.join(self.resultspth,'LineViolinPlotBVCreg%d'%(chunklen) + '.png')), dpi=200)
         print(("Figure saved as {0}".format(outFileLineViolin)))
+        
+        # Violin with dots on the side
+        plt.figure()
+        f, ax = plt.subplots(figsize=(7, 5))
+        ax=pt.half_violinplot(x = "net2", y = "MeanBVC", data = dfmean, palette=custom_p,  scale='area', edgecolor = "white", order=["FPN", "CON", "SAN", "DAN", "VAN", "DMN", "Motor", "Aud.", "Vis.", "Subc."])
+        #ax=pt.half_violinplot(x = "net2", y = "MeanBVC", data = dfmean, bw = .2, cut = 0., width = .6, inner = None)
+        plt.ylim(0, 0.65)
+        plt.xlabel('')
+        ax.set_ylabel("Mean BVC", fontsize=16)
+        plt.title('BVC')
+        ax=sns.stripplot(x = "net2", y = "MeanBVC", data = dfmean, edgecolor = "white",
+                         size = 3, jitter = 1, zorder = 0)
+        if corr==1:
+            outFileDoublePlot = 'DoubleViolinPlotBVCcorr.png'
+            plt.savefig((os.path.join(self.resultspth,'DoubleViolinPlotBVCcorr%d'%(chunklen) + '.png')), dpi=200)
+        else:
+            outFileDoublePlot = 'DoubleViolinPlotBVC.png'
+            plt.savefig((os.path.join(self.resultspth,'DoubleViolinPlotBVCreg%d'%(chunklen) + '.png')), dpi=200)
         
         
         # Violin plot
