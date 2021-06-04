@@ -234,6 +234,7 @@ class poolsubjs:
             plt.savefig((os.path.join(self.resultspth,'LineViolinPlotBVCreg%d'%(chunklen) + '.png')), dpi=200)
         print(("Figure saved as {0}".format(outFileLineViolin)))
         
+        
         # Violin with dots on the side
         plt.figure()
         f, ax = plt.subplots(figsize=(7, 5))
@@ -251,7 +252,6 @@ class poolsubjs:
         else:
             outFileDoublePlot = 'DoubleViolinPlotBVC.png'
             plt.savefig((os.path.join(self.resultspth,'DoubleViolinPlotBVCreg%d'%(chunklen) + '.png')), dpi=200)
-        
 
 
         # Violin plot
@@ -400,23 +400,24 @@ class poolsubjs:
             plt.savefig((os.path.join(self.resultspth,'LineViolinPlotBVCreg%d'%(chunklen) + '.png')), dpi=200)
         print(("Figure saved as {0}".format(outFileLineViolin)))
         
-        # Violin with dots on the side
+        
+        # Violin with rain on the side
         plt.figure()
         f, ax = plt.subplots(figsize=(7, 5))
-        ax=pt.half_violinplot(x = "net2", y = "MeanBVC", data = dfmean, palette=custom_p,  scale='area', edgecolor = "white", order=["FPN", "CON", "SAN", "DAN", "VAN", "DMN", "Motor", "Aud.", "Vis.", "Subc."])
+        ax=pt.half_violinplot(x = "net2", y = "MeanGVC", data = dfmean, palette=custom_p,  scale='area', edgecolor = "white", order=["FPN", "CON", "SAN", "DAN", "VAN", "DMN", "Motor", "Aud.", "Vis.", "Subc."])
         #ax=pt.half_violinplot(x = "net2", y = "MeanBVC", data = dfmean, bw = .2, cut = 0., width = .6, inner = None)
         plt.ylim(0, 0.65)
         plt.xlabel('')
         ax.set_ylabel("Mean BVC", fontsize=16)
         plt.title('BVC')
-        ax=sns.stripplot(x = "net2", y = "MeanBVC", data = dfmean, edgecolor = "white",
+        ax=sns.stripplot(x = "net2", y = "MeanGVC", data = dfmean, edgecolor = "white",
                          size = 3, jitter = 1, zorder = 0)
         if corr==1:
-            outFileDoublePlot = 'DoubleViolinPlotBVCcorr.png'
-            plt.savefig((os.path.join(self.resultspth,'DoubleViolinPlotBVCcorr%d'%(chunklen) + '.png')), dpi=200)
+            outFileDoublePlot = 'DoubleViolinPlotGVCcorr.png'
+            plt.savefig((os.path.join(self.resultspth,'DoubleViolinPlotGVCcorr%d'%(chunklen) + '.png')), dpi=200)
         else:
             outFileDoublePlot = 'DoubleViolinPlotBVC.png'
-            plt.savefig((os.path.join(self.resultspth,'DoubleViolinPlotBVCreg%d'%(chunklen) + '.png')), dpi=200)
+            plt.savefig((os.path.join(self.resultspth,'DoubleViolinPlotGVCreg%d'%(chunklen) + '.png')), dpi=200)
         
         
         # Violin plot
