@@ -238,14 +238,13 @@ class poolsubjs:
         # Violin with dots on the side
         plt.figure()
         f, ax = plt.subplots(figsize=(7, 5))
-        ax=pt.half_violinplot(x = "net2", y = "MeanBVC", data = dfmean, palette=custom_p,  scale='area', edgecolor = "white", order=["FPN", "CON", "SAN", "DAN", "VAN", "DMN", "Motor", "Aud.", "Vis.", "Subc."])
+        ax=pt.half_violinplot(x = "net2", y = "MeanBVC", data = dfmean, palette=custom_p, scale='area', linewidth=0, order=["FPN", "CON", "SAN", "DAN", "VAN", "DMN", "Motor", "Aud.", "Vis.", "Subc."])
         #ax=pt.half_violinplot(x = "net2", y = "MeanBVC", data = dfmean, bw = .2, cut = 0., width = .6, inner = None)
         plt.ylim(0, 0.65)
         plt.xlabel('')
         ax.set_ylabel("Mean BVC", fontsize=16)
         plt.title('BVC')
-        ax=sns.stripplot(x = "net2", y = "MeanBVC", data = dfmean, edgecolor = "white",
-                         size = 3, jitter = 1, zorder = 0)
+        ax=sns.stripplot(x = "net2", y = "MeanBVC", data = dfmean, edgecolor = "white", size = 3, jitter = 1, zorder = 0, palette=custom_p, order=["FPN", "CON", "SAN", "DAN", "VAN", "DMN", "Motor", "Aud.", "Vis.", "Subc."])
         if corr==1:
             outFileDoublePlot = 'DoubleViolinPlotBVCcorr.png'
             plt.savefig((os.path.join(self.resultspth,'DoubleViolinPlotBVCcorr%d'%(chunklen) + '.png')), dpi=200)
@@ -393,10 +392,10 @@ class poolsubjs:
         ax.set_ylabel("Mean BVC", fontsize=16)
         plt.title('GVC')
         if corr==1:
-            outLineRainViolin = "LineViolinPlotBVCcorr.png"
+            outLineRainViolin = "LineViolinPlotGVCcorr.png"
             plt.savefig((os.path.join(self.resultspth,'LineViolinPlotBVCcorr%d'%(chunklen) + '.png')), dpi=200)
         else:
-            outFileLineViolin = "LineViolinPlotBVC.png"
+            outFileLineViolin = "LineViolinPlotGVC.png"
             plt.savefig((os.path.join(self.resultspth,'LineViolinPlotBVCreg%d'%(chunklen) + '.png')), dpi=200)
         print(("Figure saved as {0}".format(outFileLineViolin)))
         
@@ -405,7 +404,6 @@ class poolsubjs:
         plt.figure()
         f, ax = plt.subplots(figsize=(7, 5))
         ax=pt.half_violinplot(x = "net2", y = "MeanGVC", data = dfmean, palette=custom_p,  scale='area', edgecolor = "white", order=["FPN", "CON", "SAN", "DAN", "VAN", "DMN", "Motor", "Aud.", "Vis.", "Subc."])
-        #ax=pt.half_violinplot(x = "net2", y = "MeanBVC", data = dfmean, bw = .2, cut = 0., width = .6, inner = None)
         plt.ylim(0, 0.65)
         plt.xlabel('')
         ax.set_ylabel("Mean BVC", fontsize=16)
@@ -416,7 +414,7 @@ class poolsubjs:
             outFileDoublePlot = 'DoubleViolinPlotGVCcorr.png'
             plt.savefig((os.path.join(self.resultspth,'DoubleViolinPlotGVCcorr%d'%(chunklen) + '.png')), dpi=200)
         else:
-            outFileDoublePlot = 'DoubleViolinPlotBVC.png'
+            outFileDoublePlot = 'DoubleViolinPlotGVC.png'
             plt.savefig((os.path.join(self.resultspth,'DoubleViolinPlotGVCreg%d'%(chunklen) + '.png')), dpi=200)
         
         
