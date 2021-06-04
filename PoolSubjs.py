@@ -237,7 +237,7 @@ class poolsubjs:
         # Violin with dots on the side
         plt.figure()
         f, ax = plt.subplots(figsize=(7, 5))
-        ax=pt.half_violinplot(x = "net2", y = "MeanBVC", data = dfmean, inner = None, palette=custom_p,)
+        ax=pt.half_violinplot(x = "net2", y = "MeanBVC", data = dfmean, palette=custom_p,  scale='area', order=["FPN", "CON", "SAN", "DAN", "VAN", "DMN", "Motor", "Aud.", "Vis.", "Subc."])
         #ax=pt.half_violinplot(x = "net2", y = "MeanBVC", data = dfmean, bw = .2, cut = 0., width = .6, inner = None)
         plt.ylim(0, 0.65)
         plt.xlabel('')
