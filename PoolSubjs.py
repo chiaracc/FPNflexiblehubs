@@ -215,7 +215,7 @@ class poolsubjs:
             outFileRainViolin = "RainViolinPlotBVCcorr.png"
             plt.savefig((os.path.join(self.resultspth,'RainViolinPlotBVCcorr%d'%(chunklen) + '.png')), dpi=200)
         else:
-            outFileRainViolin = "RainViolinPlotBVC.png"
+            outFileRainViolin = "RainViolinPlotBVCreg.png"
             plt.savefig((os.path.join(self.resultspth,'RainViolinPlotBVCreg%d'%(chunklen) + '.png')), dpi=200)
         print(("Figure saved as {0}".format(outFileRainViolin)))
         
@@ -230,7 +230,7 @@ class poolsubjs:
             outLineRainViolin = "LineViolinPlotBVCcorr.png"
             plt.savefig((os.path.join(self.resultspth,'LineViolinPlotBVCcorr%d'%(chunklen) + '.png')), dpi=200)
         else:
-            outFileLineViolin = "LineViolinPlotBVC.png"
+            outFileLineViolin = "LineViolinPlotBVCreg.png"
             plt.savefig((os.path.join(self.resultspth,'LineViolinPlotBVCreg%d'%(chunklen) + '.png')), dpi=200)
         print(("Figure saved as {0}".format(outFileLineViolin)))
         
@@ -239,17 +239,16 @@ class poolsubjs:
         plt.figure()
         f, ax = plt.subplots(figsize=(7, 5))
         ax=pt.half_violinplot(x = "net2", y = "MeanBVC", data = dfmean, palette=custom_p, scale='area', linewidth=0, order=["FPN", "CON", "SAN", "DAN", "VAN", "DMN", "Motor", "Aud.", "Vis.", "Subc."])
-        #ax=pt.half_violinplot(x = "net2", y = "MeanBVC", data = dfmean, bw = .2, cut = 0., width = .6, inner = None)
+        ax=sns.stripplot(x = "net2", y = "MeanBVC", data = dfmean, edgecolor = "white", size = 3, jitter = 1, zorder = 0, palette=custom_p, order=["FPN", "CON", "SAN", "DAN", "VAN", "DMN", "Motor", "Aud.", "Vis.", "Subc."])
         plt.ylim(0, 0.65)
         plt.xlabel('')
         ax.set_ylabel("Mean BVC", fontsize=16)
         plt.title('BVC')
-        ax=sns.stripplot(x = "net2", y = "MeanBVC", data = dfmean, edgecolor = "white", size = 3, jitter = 1, zorder = 0, palette=custom_p, order=["FPN", "CON", "SAN", "DAN", "VAN", "DMN", "Motor", "Aud.", "Vis.", "Subc."])
         if corr==1:
             outFileDoublePlot = 'DoubleViolinPlotBVCcorr.png'
             plt.savefig((os.path.join(self.resultspth,'DoubleViolinPlotBVCcorr%d'%(chunklen) + '.png')), dpi=200)
         else:
-            outFileDoublePlot = 'DoubleViolinPlotBVC.png'
+            outFileDoublePlot = 'DoubleViolinPlotBVCreg.png'
             plt.savefig((os.path.join(self.resultspth,'DoubleViolinPlotBVCreg%d'%(chunklen) + '.png')), dpi=200)
 
 
