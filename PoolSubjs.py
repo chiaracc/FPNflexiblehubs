@@ -218,21 +218,7 @@ class poolsubjs:
             outFileRainViolin = "RainViolinPlotBVCreg.png"
             plt.savefig((os.path.join(self.resultspth,'RainViolinPlotBVCreg%d'%(chunklen) + '.png')), dpi=200)
         print(("Figure saved as {0}".format(outFileRainViolin)))
-        
-        # Violin with lines
-        plt.figure()
-        ax = sns.violinplot(x="net2", y="MeanBVC", data=dfmean, color=".8", scale='area', inner="stick")
-        plt.ylim(0, 0.65)
-        plt.xlabel('')
-        ax.set_ylabel("Mean BVC", fontsize=16)
-        plt.title('BVC')
-        if corr==1:
-            outLineRainViolin = "LineViolinPlotBVCcorr.png"
-            plt.savefig((os.path.join(self.resultspth,'LineViolinPlotBVCcorr%d'%(chunklen) + '.png')), dpi=200)
-        else:
-            outFileLineViolin = "LineViolinPlotBVCreg.png"
-            plt.savefig((os.path.join(self.resultspth,'LineViolinPlotBVCreg%d'%(chunklen) + '.png')), dpi=200)
-        print(("Figure saved as {0}".format(outFileLineViolin)))
+       
         
         
         # Violin with dots on the side
@@ -380,23 +366,7 @@ class poolsubjs:
             outFileRainViolin = "RainViolinPlotGVC.png"
             plt.savefig((os.path.join(self.resultspth,'RainViolinPlotGVCreg%d'%(chunklen) + '.png')), dpi=200)
         print(("Figure saved as {0}".format(outFileRainViolin)))
-        
 
-
-        # Violin with lines
-        plt.figure()
-        ax = sns.violinplot(x="net2", y="MeanGVC", data=dfmean, scale='area', inner="stick")
-        plt.ylim(0, 0.65)
-        plt.xlabel('')
-        ax.set_ylabel("Mean BVC", fontsize=16)
-        plt.title('GVC')
-        if corr==1:
-            outLineRainViolin = "LineViolinPlotGVCcorr.png"
-            plt.savefig((os.path.join(self.resultspth,'LineViolinPlotBVCcorr%d'%(chunklen) + '.png')), dpi=200)
-        else:
-            outFileLineViolin = "LineViolinPlotGVC.png"
-            plt.savefig((os.path.join(self.resultspth,'LineViolinPlotBVCreg%d'%(chunklen) + '.png')), dpi=200)
-        print(("Figure saved as {0}".format(outFileLineViolin)))
         
         
         # Violin with dots on the side
