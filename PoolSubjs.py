@@ -399,21 +399,20 @@ class poolsubjs:
         print(("Figure saved as {0}".format(outFileLineViolin)))
         
         
-        # Violin with rain on the side
+        # Violin with dots on the side
         plt.figure()
         f, ax = plt.subplots(figsize=(7, 5))
-        ax=pt.half_violinplot(x = "net2", y = "MeanGVC", data = dfmean, palette=custom_p,  scale='area', edgecolor = "white", order=["FPN", "CON", "SAN", "DAN", "VAN", "DMN", "Motor", "Aud.", "Vis.", "Subc."])
+        ax=pt.half_violinplot(x = "net2", y = "MeanGVC", data = dfmean, palette=custom_p, scale='area', linewidth=0, order=["FPN", "CON", "SAN", "DAN", "VAN", "DMN", "Motor", "Aud.", "Vis.", "Subc."])
+        ax=sns.stripplot(x = "net2", y = "MeanGVC", data = dfmean, edgecolor = "white", size = 3, jitter = 1, zorder = 0, palette=custom_p, order=["FPN", "CON", "SAN", "DAN", "VAN", "DMN", "Motor", "Aud.", "Vis.", "Subc."])
         plt.ylim(0, 0.65)
         plt.xlabel('')
-        ax.set_ylabel("Mean BVC", fontsize=16)
-        plt.title('BVC')
-        ax=sns.stripplot(x = "net2", y = "MeanGVC", data = dfmean, edgecolor = "white",
-                         size = 3, jitter = 1, zorder = 0)
+        ax.set_ylabel("Mean GVC", fontsize=16)
+        plt.title('GVC')
         if corr==1:
             outFileDoublePlot = 'DoubleViolinPlotGVCcorr.png'
             plt.savefig((os.path.join(self.resultspth,'DoubleViolinPlotGVCcorr%d'%(chunklen) + '.png')), dpi=200)
         else:
-            outFileDoublePlot = 'DoubleViolinPlotGVC.png'
+            outFileDoublePlot = 'DoubleViolinPlotGVCreg.png'
             plt.savefig((os.path.join(self.resultspth,'DoubleViolinPlotGVCreg%d'%(chunklen) + '.png')), dpi=200)
         
         
