@@ -41,4 +41,4 @@ chunklen=int(sys.argv[1])
 #studyforrest.stage3_analysis(chunklen, corr=1)
 
 # Run stage 4
-studyforrest.stage4_analysis(chunklen, corr=0)
+studyforrest.stage4_analysis(chunklen, corr=1)
