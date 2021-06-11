@@ -196,19 +196,8 @@ class poolsubjs:
         else:
             np.savetxt((os.path.join(self.resultspth,'ResultsMultipleComparisonBVCreg%d'%(chunklen) + '.txt')), comp, fmt='%s')
         
-        
-                # Loading in data - you can skip this bit if you just insert subsequent code into stage4 after comp=mod.allpairtest
-        df = pd.read_csv('results-assignBVCcorr15.csv')
-        df.drop(df.columns[0],axis=1,inplace=True)
-        dfsubjmean_against_grandmean = df.groupby('subject').transform('mean') - df.mean()
-        df2 = df - dfsubjmean_against_grandmean
-        df['MeanBVC']=df2['MeanBVC']
-        dfmean=df.groupby(['subject','net2']).mean()
-        dfmean = dfmean.reset_index(drop=False)
-        mod = MultiComparison(dfmean['MeanBVC'], dfmean['net2'])#
-        comp = mod.allpairtest(stats.ttest_rel, method='fdr_bh')
-
         # Making plot 
+        plt.figure()
         net=list(set(dfmean['net2']))
         net.sort()
         nnet=len(net)
@@ -238,6 +227,9 @@ class poolsubjs:
             spine.set_visible(False)
         plt.xticks(rotation=90)
         plt.show()
+        plt.savefig((os.path.join(self.resultspth,'Matrix%d'%(chunklen) + '.png')), dpi=200)
+        
+       
         
         
         
@@ -322,8 +314,7 @@ class poolsubjs:
         plt.xlabel('')
         ax.set_ylabel("Mean BVC", fontsize=16)
         plt.title('BVC')
-        outFileDoublePlot = 'DoubleViolinPlotBVCreg.png'
-        plt.savefig((os.path.join(self.resultspth,'DoubleViolinPlotBVCreg%d'%(chunklen) + '.png')), dpi=200)
+        plt.savefig((os.path.join(self.resultspth,'DoubleViolinPlotOrderBVCregCC%d'%(chunklen) + '.png')), dpi=200)
         
        
      
@@ -436,18 +427,9 @@ class poolsubjs:
         else:
             np.savetxt((os.path.join(self.resultspth,'ResultsMultipleComparisonGVCreg%d'%(chunklen) + '.txt')), comp, fmt='%s')
 
-        # Loading in data - you can skip this bit if you just insert subsequent code into stage4 after comp=mod.allpairtest
-        df = pd.read_csv('results-assignBVCcorr15.csv')
-        df.drop(df.columns[0],axis=1,inplace=True)
-        dfsubjmean_against_grandmean = df.groupby('subject').transform('mean') - df.mean()
-        df2 = df - dfsubjmean_against_grandmean
-        df['MeanBVC']=df2['MeanBVC']
-        dfmean=df.groupby(['subject','net2']).mean()
-        dfmean = dfmean.reset_index(drop=False)
-        mod = MultiComparison(dfmean['MeanBVC'], dfmean['net2'])#
-        comp = mod.allpairtest(stats.ttest_rel, method='fdr_bh')
 
         # Making plot 
+        plt.figure()
         net=list(set(dfmean['net2']))
         net.sort()
         nnet=len(net)
@@ -477,6 +459,7 @@ class poolsubjs:
             spine.set_visible(False)
         plt.xticks(rotation=90)
         plt.show()
+        plt.savefig((os.path.join(self.resultspth,'Matrix%d'%(chunklen) + '.png')), dpi=200)
         
         ###### GRAPHS GVC ######
         # Create a custom color palette for graphs
@@ -533,7 +516,7 @@ class poolsubjs:
         plt.figure()
         f, ax = plt.subplots(figsize=(7, 5))
         ax=pt.half_violinplot(x = "net2", y = "MeanGVC", data = dfmean, palette=custom_pGVCregSF, scale='area', linewidth=0, order=["DAN", "VAN", "Motor", "SAN", "Vis.", "Subc.", "FPN", "DMN", "Aud.", "CON"])
-        ax=sns.stripplot(x = "net2", y = "MeanGVC", data = dfmean, edgecolor = "white", size = 3, jitter = 1, zorder = 0, palette=custom_p, order=["DAN", "VAN", "Motor", "SAN", "Vis.", "Subc.", "FPN", "DMN", "Aud.", "CON"])
+        ax=sns.stripplot(x = "net2", y = "MeanGVC", data = dfmean, edgecolor = "white", size = 3, jitter = 1, zorder = 0, palette=custom_pGVCregSF, order=["DAN", "VAN", "Motor", "SAN", "Vis.", "Subc.", "FPN", "DMN", "Aud.", "CON"])
         plt.ylim(0, 0.65)
         plt.xlabel('')
         ax.set_ylabel("Mean GVC", fontsize=16)
@@ -545,7 +528,7 @@ class poolsubjs:
         plt.figure()
         f, ax = plt.subplots(figsize=(7, 5))
         ax=pt.half_violinplot(x = "net2", y = "MeanGVC", data = dfmean, palette=custom_pcustom_pGVCregCC, scale='area', linewidth=0, order=["Aud.", "Motor", "DMN", "FPN", "Vis.", "Subc.", "SAN", "CON", "VAN", "DAN"])
-        ax=sns.stripplot(x = "net2", y = "MeanGVC", data = dfmean, edgecolor = "white", size = 3, jitter = 1, zorder = 0, palette=custom_p, order=["Aud.", "Motor", "DMN", "FPN", "Vis.", "Subc.", "SAN", "CON", "VAN", "DAN"])
+        ax=sns.stripplot(x = "net2", y = "MeanGVC", data = dfmean, edgecolor = "white", size = 3, jitter = 1, zorder = 0, palette=custom_pcustom_pGVCregCC, order=["Aud.", "Motor", "DMN", "FPN", "Vis.", "Subc.", "SAN", "CON", "VAN", "DAN"])
         plt.ylim(0, 0.65)
         plt.xlabel('')
         ax.set_ylabel("Mean GVC", fontsize=16)
