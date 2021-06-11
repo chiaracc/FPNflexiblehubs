@@ -415,7 +415,7 @@ class poolsubjs:
         
         ###### GRAPHS GVC ######
         # Create a custom color palette for graphs
-        colors = ["fpn#F7EA23", "con#B51DA3", "san#000000", "dan#1DB526", "van#5692BF", "dmn#F31111", "motor#31A8F1", "aud#F131DF", "vis#1B56A6", "subc#950707"]
+        colors = ["#F7EA23", "#B51DA3", "#000000", "#1DB526", "#5692BF", "#F31111", "#31A8F1", "#F131DF", "#1B56A6", "#950707"]
         # Set the custom color palette
         custom_p = sns.set_palette(sns.color_palette(colors))
         
