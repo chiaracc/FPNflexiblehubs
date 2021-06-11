@@ -196,6 +196,52 @@ class poolsubjs:
         else:
             np.savetxt((os.path.join(self.resultspth,'ResultsMultipleComparisonBVCreg%d'%(chunklen) + '.txt')), comp, fmt='%s')
         
+        
+                # Loading in data - you can skip this bit if you just insert subsequent code into stage4 after comp=mod.allpairtest
+        df = pd.read_csv('results-assignBVCcorr15.csv')
+        df.drop(df.columns[0],axis=1,inplace=True)
+        dfsubjmean_against_grandmean = df.groupby('subject').transform('mean') - df.mean()
+        df2 = df - dfsubjmean_against_grandmean
+        df['MeanBVC']=df2['MeanBVC']
+        dfmean=df.groupby(['subject','net2']).mean()
+        dfmean = dfmean.reset_index(drop=False)
+        mod = MultiComparison(dfmean['MeanBVC'], dfmean['net2'])#
+        comp = mod.allpairtest(stats.ttest_rel, method='fdr_bh')
+
+        # Making plot 
+        net=list(set(dfmean['net2']))
+        net.sort()
+        nnet=len(net)
+        # Create matrix
+        pairwise = np.zeros((nnet,nnet))
+        for row in comp[2]:
+            if row[4]<0.05:
+                # corrected sig
+                val=3
+            elif row[3]<0.05:
+                # uncorrected sig
+                val=2
+            else:
+                # not sig but we have data
+                val=1
+            pairwise[net.index(row[1]), net.index(row[0])] = val
+        mycmap = ListedColormap([[1,1,1,1],[0,0,0,1],[1,0,0,1],[1,1,0,1]])
+        fig, ax = plt.subplots(1,1)
+        ax.imshow(pairwise, cmap = mycmap)
+        ax.set_xticks(range(nnet))
+        ax.set_xticklabels(net)
+        ax.set_yticks(range(nnet))
+        ax.set_yticklabels(net)
+        ax.set_xlim((-0.5,nnet-1.5))
+        ax.set_ylim((nnet-0.5,0.5))
+        for spine in ax.spines.values():
+            spine.set_visible(False)
+        plt.xticks(rotation=90)
+        plt.show()
+        
+        
+        
+        
         ###### GRAPHS BVC ######
 
         # Create a custom color palette for graphs FOR ALL GRAPHS
@@ -390,6 +436,47 @@ class poolsubjs:
         else:
             np.savetxt((os.path.join(self.resultspth,'ResultsMultipleComparisonGVCreg%d'%(chunklen) + '.txt')), comp, fmt='%s')
 
+        # Loading in data - you can skip this bit if you just insert subsequent code into stage4 after comp=mod.allpairtest
+        df = pd.read_csv('results-assignBVCcorr15.csv')
+        df.drop(df.columns[0],axis=1,inplace=True)
+        dfsubjmean_against_grandmean = df.groupby('subject').transform('mean') - df.mean()
+        df2 = df - dfsubjmean_against_grandmean
+        df['MeanBVC']=df2['MeanBVC']
+        dfmean=df.groupby(['subject','net2']).mean()
+        dfmean = dfmean.reset_index(drop=False)
+        mod = MultiComparison(dfmean['MeanBVC'], dfmean['net2'])#
+        comp = mod.allpairtest(stats.ttest_rel, method='fdr_bh')
+
+        # Making plot 
+        net=list(set(dfmean['net2']))
+        net.sort()
+        nnet=len(net)
+        # Create matrix
+        pairwise = np.zeros((nnet,nnet))
+        for row in comp[2]:
+            if row[4]<0.05:
+                # corrected sig
+                val=3
+            elif row[3]<0.05:
+                # uncorrected sig
+                val=2
+            else:
+                # not sig but we have data
+                val=1
+            pairwise[net.index(row[1]), net.index(row[0])] = val
+        mycmap = ListedColormap([[1,1,1,1],[0,0,0,1],[1,0,0,1],[1,1,0,1]])
+        fig, ax = plt.subplots(1,1)
+        ax.imshow(pairwise, cmap = mycmap)
+        ax.set_xticks(range(nnet))
+        ax.set_xticklabels(net)
+        ax.set_yticks(range(nnet))
+        ax.set_yticklabels(net)
+        ax.set_xlim((-0.5,nnet-1.5))
+        ax.set_ylim((nnet-0.5,0.5))
+        for spine in ax.spines.values():
+            spine.set_visible(False)
+        plt.xticks(rotation=90)
+        plt.show()
         
         ###### GRAPHS GVC ######
         # Create a custom color palette for graphs
@@ -398,7 +485,7 @@ class poolsubjs:
         custom_p = sns.set_palette(sns.color_palette(colors))
         
          # Create a custom color palette for graphs #SF REG GVC
-        colors = ["fpn#F7EA23", "#B51DA3", "#000000", "#1DB526", "#5692BF", "#F31111", "#31A8F1", "#F131DF", "#1B56A6", "#950707"]
+        colors = ["#F7EA23", "#B51DA3", "#000000", "#1DB526", "#5692BF", "#F31111", "#31A8F1", "#F131DF", "#1B56A6", "#950707"]
         # Set the custom color palette
         custom_pGVCregSF = sns.set_palette(sns.color_palette(colors))
         
@@ -527,3 +614,9 @@ class poolsubjs:
         file = open((os.path.join(self.resultspth,'Activity.txt')),'a') 
         file.write("\n Finished stage 4 **Calculate statistics** at " + str(now))
         file.close()
+
+        
+        
+        
+        
+        
