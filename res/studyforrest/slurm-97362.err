@@ -1,4 +1,0 @@
-/camcan/anaconda3/envs/chiara_env/lib/python3.8/site-packages/seaborn/categorical.py:1296: UserWarning: 6.7% of the points cannot be placed; you may want to decrease the size of the markers or use stripplot.
-  warnings.warn(msg, UserWarning)
-/camcan/anaconda3/envs/chiara_env/lib/python3.8/site-packages/seaborn/categorical.py:1296: UserWarning: 46.7% of the points cannot be placed; you may want to decrease the size of the markers or use stripplot.
-  warnings.warn(msg, UserWarning)
