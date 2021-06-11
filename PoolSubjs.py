@@ -198,21 +198,22 @@ class poolsubjs:
         
         ###### GRAPHS BVC ######
 
-        # Create a custom color palette for graphs
+        # Create a custom color palette for graphs FOR ALL GRAPHS
         colors = ["#F7EA23", "#B51DA3", "#000000", "#1DB526", "#5692BF", "#F31111", "#31A8F1", "#F131DF", "#1B56A6", "#950707"]
         # Set the custom color palette
         custom_p = sns.set_palette(sns.color_palette(colors))
         
-        # Create a custom color palette for graphs #SF REG BVC
-        colors = ["#F7EA23", "#B51DA3", "#000000", "#1DB526", "#5692BF", "#F31111", "#31A8F1", "#F131DF", "#1B56A6", "#950707"]
-        # Set the custom color palette
-        custom_p = sns.set_palette(sns.color_palette(colors))
         
-        # Create a custom color palette for graphs #CC REG BVC
-        colors = []
+        # Create a custom color palette for graphs bvc st 15 VAN DAN Motor SAN Whole Brain FPN Vis. Subc. Aud. DMN CON
+        colors = ["#5692BF", "#1DB526", "#31A8F1", "#000000", "#F7EA23", "#1B56A6", "#950707", "#F131DF", "#F31111", "#B51DA3"]
         # Set the custom color palette
-        custom_p = sns.set_palette(sns.color_palette(colors))
+        custom_pBVCregST = sns.set_palette(sns.color_palette(colors))
+
         
+        # Create a custom color palette for graphs for #CC REG BVC "Motor", "Aud.", "FPN", "DMN", "Subc.", "Vis.", "SAN", "CON", "VAN", "DAN"])
+        colors = ["#31A8F1", "#F131DF", "#F7EA23", "#F31111", "#950707", "#1B56A6", "#000000", "#B51DA3", "#5692BF", "#1DB526"]
+        # Set the custom color palette
+        custom_pBVCregCC = sns.set_palette(sns.color_palette(colors))
         
         
         
@@ -257,30 +258,54 @@ class poolsubjs:
         ax=pt.half_violinplot(x = "net2", y = "MeanBVC", data = dfmean, palette=custom_p, scale='area', linewidth=0, order=["VAN", "DAN", "Motor", "SAN", "FPN", "Vis.", "Subc.", "Aud.", "DMN", "CON"])
         ax=sns.stripplot(x = "net2", y = "MeanBVC", data = dfmean, edgecolor = "white", size = 3, jitter = 1, zorder = 0, palette=custom_p, order=["VAN", "DAN", "Motor", "SAN", "FPN", "Vis.", "Subc.", "Aud.", "DMN", "CON"])
         
-        #SF REG GVC
-        ax=pt.half_violinplot(x = "net2", y = "MeanBVC", data = dfmean, palette=custom_p, scale='area', linewidth=0, order=["DAN", "VAN", "Motor", "SAN", "Vis.", "Subc.", "FPN", "DMN", "Aud.", "CON"])
-        ax=sns.stripplot(x = "net2", y = "MeanBVC", data = dfmean, edgecolor = "white", size = 3, jitter = 1, zorder = 0, palette=custom_p, order=["DAN", "VAN", "Motor", "SAN", "Vis.", "Subc.", "FPN", "DMN", "Aud.", "CON"])
         
         #CC REG BVC
         ax=pt.half_violinplot(x = "net2", y = "MeanBVC", data = dfmean, palette=custom_p, scale='area', linewidth=0, order=["Motor", "Aud.", "FPN", "DMN", "Subc.", "Vis.", "SAN", "CON", "VAN", "DAN"])
         ax=sns.stripplot(x = "net2", y = "MeanBVC", data = dfmean, edgecolor = "white", size = 3, jitter = 1, zorder = 0, palette=custom_p, order=["Motor", "Aud.", "FPN", "DMN", "Subc.", "Vis.", "SAN", "CON", "VAN", "DAN"])
-        
-        #CC REG GVC
-        ax=pt.half_violinplot(x = "net2", y = "MeanBVC", data = dfmean, palette=custom_p, scale='area', linewidth=0, order=["Aud.", "Motor", "DMN", "FPN", "Vis.", "Subc.", "SAN", "CON", "VAN", "DAN"])
-        ax=sns.stripplot(x = "net2", y = "MeanBVC", data = dfmean, edgecolor = "white", size = 3, jitter = 1, zorder = 0, palette=custom_p, order=["Aud.", "Motor", "DMN", "FPN", "Vis.", "Subc.", "SAN", "CON", "VAN", "DAN"])
-        
+                
+          
+        # Violin with dots on the side
+        plt.figure()
+        f, ax = plt.subplots(figsize=(7, 5))
+        ax=pt.half_violinplot(x = "net2", y = "MeanBVC", data = dfmean, palette=custom_p, scale='area', linewidth=0, order=["FPN", "CON", "SAN", "DAN", "VAN", "DMN", "Motor", "Aud.", "Vis.", "Subc."])
+        ax=sns.stripplot(x = "net2", y = "MeanBVC", data = dfmean, edgecolor = "white", size = 3, jitter = 1, zorder = 0, palette=custom_p, order=["FPN", "CON", "SAN", "DAN", "VAN", "DMN", "Motor", "Aud.", "Vis.", "Subc."])
         plt.ylim(0, 0.65)
         plt.xlabel('')
         ax.set_ylabel("Mean BVC", fontsize=16)
         plt.title('BVC')
-        if corr==1:
-            outFileDoublePlot = 'DoubleViolinPlotBVCcorr.png'
-            plt.savefig((os.path.join(self.resultspth,'DoubleViolinPlotBVCcorr%d'%(chunklen) + '.png')), dpi=200)
-        else:
-            outFileDoublePlot = 'DoubleViolinPlotBVCreg.png'
-            plt.savefig((os.path.join(self.resultspth,'DoubleViolinPlotBVCreg%d'%(chunklen) + '.png')), dpi=200)
-            
-            
+        outFileDoublePlot = 'DoubleViolinPlotBVCreg.png'
+        plt.savefig((os.path.join(self.resultspth,'DoubleViolinPlotBVCreg%d'%(chunklen) + '.png')), dpi=200)
+
+        
+        # Violin with dots on the side
+        plt.figure()
+        f, ax = plt.subplots(figsize=(7, 5))
+        ax=pt.half_violinplot(x = "net2", y = "MeanBVC", data = dfmean, palette=custom_p, scale='area', linewidth=0, order=["FPN", "CON", "SAN", "DAN", "VAN", "DMN", "Motor", "Aud.", "Vis.", "Subc."])
+        ax=sns.stripplot(x = "net2", y = "MeanBVC", data = dfmean, edgecolor = "white", size = 3, jitter = 1, zorder = 0, palette=custom_p, order=["FPN", "CON", "SAN", "DAN", "VAN", "DMN", "Motor", "Aud.", "Vis.", "Subc."])
+        plt.ylim(0, 0.65)
+        plt.xlabel('')
+        ax.set_ylabel("Mean BVC", fontsize=16)
+        plt.title('BVC')
+        outFileDoublePlot = 'DoubleViolinPlotBVCreg.png'
+        plt.savefig((os.path.join(self.resultspth,'DoubleViolinPlotBVCreg%d'%(chunklen) + '.png')), dpi=200)
+        
+       
+        
+        
+        # Violin with dots on the side
+        plt.figure()
+        f, ax = plt.subplots(figsize=(7, 5))
+        ax=pt.half_violinplot(x = "net2", y = "MeanBVC", data = dfmean, palette=custom_p, scale='area', linewidth=0, order=["FPN", "CON", "SAN", "DAN", "VAN", "DMN", "Motor", "Aud.", "Vis.", "Subc."])
+        ax=sns.stripplot(x = "net2", y = "MeanBVC", data = dfmean, edgecolor = "white", size = 3, jitter = 1, zorder = 0, palette=custom_p, order=["FPN", "CON", "SAN", "DAN", "VAN", "DMN", "Motor", "Aud.", "Vis.", "Subc."])
+        plt.ylim(0, 0.65)
+        plt.xlabel('')
+        ax.set_ylabel("Mean BVC", fontsize=16)
+        plt.title('BVC')
+        outFileDoublePlot = 'DoubleViolinPlotBVCreg.png'
+        plt.savefig((os.path.join(self.resultspth,'DoubleViolinPlotOrderSFregBVCreg%d'%(chunklen) + '.png')), dpi=200)
+        
+        
+        
         # Violin plot
         plt.figure()
         ax = sns.violinplot(x="net2", y="MeanBVC", data=dfmean, ci=68, palette=custom_p, order=["FPN", "CON", "SAN", "DAN", "VAN", "DMN", "Motor", "Aud.", "Vis.", "Subc."])
@@ -397,12 +422,12 @@ class poolsubjs:
          # Create a custom color palette for graphs #SF REG GVC
         colors = ["fpn#F7EA23", "#B51DA3", "#000000", "#1DB526", "#5692BF", "#F31111", "#31A8F1", "#F131DF", "#1B56A6", "#950707"]
         # Set the custom color palette
-        custom_p = sns.set_palette(sns.color_palette(colors))
+        custom_pGVCregSF = sns.set_palette(sns.color_palette(colors))
         
         # Create a custom color palette for graphs for #CC REG GVC
         colors = ["#F7EA23", "#B51DA3", "#000000", "#1DB526", "#5692BF", "#F31111", "#31A8F1", "#F131DF", "#1B56A6", "#950707"]
         # Set the custom color palette
-        custom_p = sns.set_palette(sns.color_palette(colors))
+        custom_pcustom_pGVCregCC= sns.set_palette(sns.color_palette(colors))
         
         
         # Violin and jitter
@@ -442,7 +467,7 @@ class poolsubjs:
         # Violin with dots on the side in order from largest for #SF REG GVC
         plt.figure()
         f, ax = plt.subplots(figsize=(7, 5))
-        ax=pt.half_violinplot(x = "net2", y = "MeanGVC", data = dfmean, palette=custom_p, scale='area', linewidth=0, order=["DAN", "VAN", "Motor", "SAN", "Vis.", "Subc.", "FPN", "DMN", "Aud.", "CON"])
+        ax=pt.half_violinplot(x = "net2", y = "MeanGVC", data = dfmean, palette=custom_pGVCregSF, scale='area', linewidth=0, order=["DAN", "VAN", "Motor", "SAN", "Vis.", "Subc.", "FPN", "DMN", "Aud.", "CON"])
         ax=sns.stripplot(x = "net2", y = "MeanGVC", data = dfmean, edgecolor = "white", size = 3, jitter = 1, zorder = 0, palette=custom_p, order=["DAN", "VAN", "Motor", "SAN", "Vis.", "Subc.", "FPN", "DMN", "Aud.", "CON"])
         plt.ylim(0, 0.65)
         plt.xlabel('')
@@ -454,7 +479,7 @@ class poolsubjs:
         # Violin with dots on the side in order from largest for #CC REG GVC
         plt.figure()
         f, ax = plt.subplots(figsize=(7, 5))
-        ax=pt.half_violinplot(x = "net2", y = "MeanGVC", data = dfmean, palette=custom_p, scale='area', linewidth=0, order=["Aud.", "Motor", "DMN", "FPN", "Vis.", "Subc.", "SAN", "CON", "VAN", "DAN"])
+        ax=pt.half_violinplot(x = "net2", y = "MeanGVC", data = dfmean, palette=custom_pcustom_pGVCregCC, scale='area', linewidth=0, order=["Aud.", "Motor", "DMN", "FPN", "Vis.", "Subc.", "SAN", "CON", "VAN", "DAN"])
         ax=sns.stripplot(x = "net2", y = "MeanGVC", data = dfmean, edgecolor = "white", size = 3, jitter = 1, zorder = 0, palette=custom_p, order=["Aud.", "Motor", "DMN", "FPN", "Vis.", "Subc.", "SAN", "CON", "VAN", "DAN"])
         plt.ylim(0, 0.65)
         plt.xlabel('')
