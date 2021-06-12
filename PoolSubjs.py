@@ -30,6 +30,7 @@ from statsmodels.stats.multicomp import (pairwise_tukeyhsd,
                                          MultiComparison,
                                          ) 
 from statsmodels.stats.anova import anova_lm
+from matplotlib.colors import ListedColormap
 
 class poolsubjs:
     datapth=None
