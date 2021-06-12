@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "/camcan/FPNflexiblehubs/FPNflexiblehubs/flexiblehubsrunPoolSubjsSF.py", line 44, in <module>
+    studyforrest.stage4_analysis(chunklen, corr=0)
+  File "/camcan/FPNflexiblehubs/FPNflexiblehubs/PoolSubjs.py", line 217, in stage4_analysis
+    mycmap = ListedColormap([[1,1,1,1],[0,0,0,1],[1,0,0,1],[1,1,0,1]])
+NameError: name 'ListedColormap' is not defined
