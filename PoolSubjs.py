@@ -461,7 +461,7 @@ class poolsubjs:
         if corr==1:
             plt.savefig((os.path.join(self.resultspth,'DoubleViolinPlotBVCcorr%d'%(chunklen) + '.png')), dpi=200)
         else:
-        plt.savefig((os.path.join(self.resultspth,'MatrixGVCReg%d'%(chunklen) + '.png')), dpi=200)
+            plt.savefig((os.path.join(self.resultspth,'MatrixGVCReg%d'%(chunklen) + '.png')), dpi=200)
         
         
         
