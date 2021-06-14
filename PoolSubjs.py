@@ -303,8 +303,7 @@ class poolsubjs:
         plt.xlabel('')
         ax.set_ylabel("Mean BVC", fontsize=16)
         plt.title('BVC')
-        outFileDoublePlot = 'DoubleViolinPlotOrderSFregBVCreg.png'
-        plt.savefig((os.path.join(self.resultspth,'DoubleViolinPlotOrderSFregBVCreg%d'%(chunklen) + '.png')), dpi=200)
+        plt.savefig((os.path.join(self.resultspth,'DoubleViolinPlotOrderSFBVCreg%d'%(chunklen) + '.png')), dpi=200)
             
         
         # Violin with dots on the side CC REG BVC
@@ -525,12 +524,7 @@ class poolsubjs:
         plt.xlabel('')
         ax.set_ylabel("Mean GVC", fontsize=16)
         plt.title('GVC')
-        if corr==1:
-            outFileDoublePlot = 'DoubleViolinPlotGVCcorr.png'
-            plt.savefig((os.path.join(self.resultspth,'DoubleViolinPlotOrderSFregGVCreg%d'%(chunklen) + '.png')), dpi=200)
-        else:
-            outFileDoublePlot = 'DoubleViolinPlotGVCreg.png'
-            plt.savefig((os.path.join(self.resultspth,'DoubleViolinPlotOrderSFregGVCreg%d'%(chunklen) + '.png')), dpi=200)
+        plt.savefig((os.path.join(self.resultspth,'DoubleViolinPlotOrderSFGVCreg%d'%(chunklen) + '.png')), dpi=200)
         
         
         # Violin with dots on the side in order from largest for #CC REG GVC
