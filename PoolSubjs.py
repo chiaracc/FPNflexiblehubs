@@ -197,7 +197,7 @@ class poolsubjs:
         else:
             np.savetxt((os.path.join(self.resultspth,'ResultsMultipleComparisonBVCreg%d'%(chunklen) + '.txt')), comp, fmt='%s')
         
-        # Making plot 
+        # Matrix plot 
         plt.figure()
         net=list(set(dfmean['net2']))
         net.sort()
@@ -228,11 +228,12 @@ class poolsubjs:
             spine.set_visible(False)
         plt.xticks(rotation=90)
         plt.show()
-        plt.savefig((os.path.join(self.resultspth,'Matrix%d'%(chunklen) + '.png')), dpi=200)
+        if corr==1:
+            plt.savefig((os.path.join(self.resultspth,'MatrixBVCCorr%d'%(chunklen) + '.png')), dpi=200)
+        else:
+            plt.savefig((os.path.join(self.resultspth,'MatrixBVCReg%d'%(chunklen) + '.png')), dpi=200)
         
-       
-        
-        
+
         
         
         ###### GRAPHS BVC ######
@@ -317,11 +318,7 @@ class poolsubjs:
         plt.title('BVC')
         plt.savefig((os.path.join(self.resultspth,'DoubleViolinPlotOrderBVCregCC%d'%(chunklen) + '.png')), dpi=200)
         
-       
-     
-        
-        
-        
+
         # Violin plot
         plt.figure()
         ax = sns.violinplot(x="net2", y="MeanBVC", data=dfmean, ci=68, palette=custom_p, order=["FPN", "CON", "SAN", "DAN", "VAN", "DMN", "Motor", "Aud.", "Vis.", "Subc."])
@@ -429,7 +426,7 @@ class poolsubjs:
             np.savetxt((os.path.join(self.resultspth,'ResultsMultipleComparisonGVCreg%d'%(chunklen) + '.txt')), comp, fmt='%s')
 
 
-        # Making plot 
+        # Matrix plot 
         plt.figure()
         net=list(set(dfmean['net2']))
         net.sort()
@@ -460,7 +457,13 @@ class poolsubjs:
             spine.set_visible(False)
         plt.xticks(rotation=90)
         plt.show()
-        plt.savefig((os.path.join(self.resultspth,'Matrix%d'%(chunklen) + '.png')), dpi=200)
+        plt.savefig((os.path.join(self.resultspth,'MatrixGVC%d'%(chunklen) + '.png')), dpi=200)
+        if corr==1:
+            plt.savefig((os.path.join(self.resultspth,'DoubleViolinPlotBVCcorr%d'%(chunklen) + '.png')), dpi=200)
+        else:
+        plt.savefig((os.path.join(self.resultspth,'MatrixGVCReg%d'%(chunklen) + '.png')), dpi=200)
+        
+        
         
         ###### GRAPHS GVC ######
         # Create a custom color palette for graphs
@@ -469,12 +472,12 @@ class poolsubjs:
         custom_p = sns.set_palette(sns.color_palette(colors))
         
          # Create a custom color palette for graphs #SF REG GVC
-        colors = ["#F7EA23", "#B51DA3", "#000000", "#1DB526", "#5692BF", "#F31111", "#31A8F1", "#F131DF", "#1B56A6", "#950707"]
+        colors = ["#1DB526", "#5692BF", "#31A8F1", "#000000", "#1B56A6", "#950707", "#F7EA23", "#F31111", "#F131DF", "#B51DA3"]
         # Set the custom color palette
         custom_pGVCregSF = sns.set_palette(sns.color_palette(colors))
         
         # Create a custom color palette for graphs for #CC REG GVC
-        colors = ["#F7EA23", "#B51DA3", "#000000", "#1DB526", "#5692BF", "#F31111", "#31A8F1", "#F131DF", "#1B56A6", "#950707"]
+        colors = ["#F131DF", "#31A8F1", "#F31111", "#F7EA23", "#1B56A6", "#950707", "#000000", "#B51DA3", "#5692BF", "#1DB526"]
         # Set the custom color palette
         custom_pcustom_pGVCregCC= sns.set_palette(sns.color_palette(colors))
         
@@ -521,7 +524,13 @@ class poolsubjs:
         plt.ylim(0, 0.65)
         plt.xlabel('')
         ax.set_ylabel("Mean GVC", fontsize=16)
-        plt.title('BVC')
+        plt.title('GVC')
+        if corr==1:
+            outFileDoublePlot = 'DoubleViolinPlotGVCcorr.png'
+            plt.savefig((os.path.join(self.resultspth,'DoubleViolinPlotGVCcorr%d'%(chunklen) + '.png')), dpi=200)
+        else:
+            outFileDoublePlot = 'DoubleViolinPlotGVCreg.png'
+            plt.savefig((os.path.join(self.resultspth,'DoubleViolinPlotGVCreg%d'%(chunklen) + '.png')), dpi=200)
         plt.savefig((os.path.join(self.resultspth,'DoubleViolinPlotOrderSFregGVCreg%d'%(chunklen) + '.png')), dpi=200)
         
         
@@ -533,7 +542,7 @@ class poolsubjs:
         plt.ylim(0, 0.65)
         plt.xlabel('')
         ax.set_ylabel("Mean GVC", fontsize=16)
-        plt.title('BVC')
+        plt.title('GVC')
         plt.savefig((os.path.join(self.resultspth,'DoubleViolinPlotOrderCCregGVCreg%d'%(chunklen) + '.png')), dpi=200)
             
             
