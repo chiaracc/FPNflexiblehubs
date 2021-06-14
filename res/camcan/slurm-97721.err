@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "/camcan/FPNflexiblehubs/FPNflexiblehubs/flexiblehubsrunPoolSubjsCC.py", line 45, in <module>
+    studyforrest.stage4_analysis(chunklen, corr=0)
+  File "/camcan/FPNflexiblehubs/FPNflexiblehubs/PoolSubjs.py", line 535, in stage4_analysis
+    ax=pt.half_violinplot(x = "net2", y = "MeanGVC", data = dfmean, palette=custom_pcustom_pGVCregCC, scale='area', linewidth=0, order=["Aud.", "Motor", "DMN", "FPN", "Vis.", "Subc.", "SAN", "CON", "VAN", "DAN"])
+NameError: name 'custom_pcustom_pGVCregCC' is not defined
