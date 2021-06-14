@@ -476,9 +476,9 @@ class poolsubjs:
         custom_pGVCregSF = sns.set_palette(sns.color_palette(colors))
         
         # Create a custom color palette for graphs for #CC REG GVC
-        colors = ["#F131DF", "#31A8F1", "#F31111", "#F7EA23", "#1B56A6", "#950707", "#000000", "#B51DA3", "#5692BF", "#1DB526"]
+        #colors = ["#F131DF", "#31A8F1", "#F31111", "#F7EA23", "#1B56A6", "#950707", "#000000", "#B51DA3", "#5692BF", "#1DB526"]
         # Set the custom color palette
-        custom_pcustom_pGVCregCC= sns.set_palette(sns.color_palette(colors))
+        #custom_pcustom_pGVCregCC= sns.set_palette(sns.color_palette(colors))
         
         
         # Violin and jitter
