@@ -1,64 +1,64 @@
 Test Multiple Comparison ttest_rel 
-FWER=0.05 method=Holm
+FWER=0.05 method=fdr_bh
 alphacSidak=0.00, alphacBonf=0.001
 ==================================================
 group1    group2     stat   pval  pval_corr reject
 --------------------------------------------------
-  Aud.         CON  4.9194 0.0002    0.0122   True
-  Aud.         DAN -1.2574 0.2292       1.0  False
-  Aud.         DMN   1.651  0.121       1.0  False
-  Aud.         FPN  1.5548 0.1423       1.0  False
-  Aud.       Motor  0.0611 0.9521       1.0  False
-  Aud.         SAN  0.7029 0.4937       1.0  False
-  Aud.       Subc.  0.9669   0.35       1.0  False
-  Aud.         VAN -0.2839 0.7806       1.0  False
-  Aud.        Vis.  3.5691 0.0031    0.1387  False
-  Aud. Whole Brain  2.2183 0.0436       1.0  False
-   CON         DAN -4.0652 0.0012    0.0544  False
-   CON         DMN  -3.615 0.0028    0.1294  False
-   CON         FPN -0.3907 0.7019       1.0  False
-   CON       Motor -3.0308  0.009    0.3774  False
-   CON         SAN -2.1053 0.0538       1.0  False
-   CON       Subc. -1.4555 0.1676       1.0  False
-   CON         VAN -2.2396 0.0419       1.0  False
-   CON        Vis.  1.1384 0.2741       1.0  False
-   CON Whole Brain -1.6991 0.1114       1.0  False
-   DAN         DMN  2.2683 0.0397       1.0  False
-   DAN         FPN  3.5588 0.0031    0.1387  False
-   DAN       Motor  1.5857 0.1351       1.0  False
-   DAN         SAN   2.068 0.0576       1.0  False
-   DAN       Subc.   1.968 0.0692       1.0  False
-   DAN         VAN  0.6919 0.5003       1.0  False
+  Aud.         CON  4.9194 0.0002    0.0043   True
+  Aud.         DAN -1.2574 0.2292    0.3425  False
+  Aud.         DMN   1.651  0.121    0.2464  False
+  Aud.         FPN  1.5548 0.1423    0.2699  False
+  Aud.       Motor  0.0611 0.9521    0.9698  False
+  Aud.         SAN  0.7029 0.4937    0.5798  False
+  Aud.       Subc.  0.9669   0.35    0.4477  False
+  Aud.         VAN -0.2839 0.7806    0.8116  False
+  Aud.        Vis.  3.5691 0.0031    0.0144   True
+  Aud. Whole Brain  2.2183 0.0436    0.1261  False
+   CON         DAN -4.0652 0.0012    0.0071   True
+   CON         DMN  -3.615 0.0028    0.0144   True
+   CON         FPN -0.3907 0.7019    0.7721  False
+   CON       Motor -3.0308  0.009    0.0353   True
+   CON         SAN -2.1053 0.0538     0.148  False
+   CON       Subc. -1.4555 0.1676     0.288  False
+   CON         VAN -2.2396 0.0419    0.1261  False
+   CON        Vis.  1.1384 0.2741    0.3769  False
+   CON Whole Brain -1.6991 0.1114    0.2451  False
+   DAN         DMN  2.2683 0.0397    0.1261  False
+   DAN         FPN  3.5588 0.0031    0.0144   True
+   DAN       Motor  1.5857 0.1351    0.2654  False
+   DAN         SAN   2.068 0.0576     0.148  False
+   DAN       Subc.   1.968 0.0692    0.1655  False
+   DAN         VAN  0.6919 0.5003    0.5798  False
    DAN        Vis.  6.2936    0.0    0.0011   True
-   DAN Whole Brain  4.1624  0.001    0.0469   True
-   DMN         FPN  0.9954 0.3364       1.0  False
-   DMN       Motor -1.3346 0.2033       1.0  False
-   DMN         SAN -0.3697 0.7172       1.0  False
-   DMN       Subc.  0.0257 0.9799       1.0  False
-   DMN         VAN -1.2519 0.2311       1.0  False
-   DMN        Vis.  4.1236  0.001    0.0496   True
-   DMN Whole Brain  1.3399 0.2016       1.0  False
-   FPN       Motor -1.9303 0.0741       1.0  False
-   FPN         SAN -1.4763  0.162       1.0  False
-   FPN       Subc. -1.2024 0.2492       1.0  False
-   FPN         VAN -2.3884 0.0316       1.0  False
-   FPN        Vis.  1.6659 0.1179       1.0  False
-   FPN Whole Brain -0.6826  0.506       1.0  False
- Motor         SAN  0.7854 0.4453       1.0  False
- Motor       Subc.  1.2364 0.2366       1.0  False
- Motor         VAN -0.4106 0.6876       1.0  False
- Motor        Vis.  4.7403 0.0003    0.0164   True
- Motor Whole Brain  3.2714 0.0056    0.2395  False
-   SAN       Subc.   0.282 0.7821       1.0  False
-   SAN         VAN -1.2811  0.221       1.0  False
-   SAN        Vis.  4.3186 0.0007    0.0361   True
-   SAN Whole Brain  1.5229   0.15       1.0  False
- Subc.         VAN -1.0534   0.31       1.0  False
- Subc.        Vis.  2.5288 0.0241    0.9876  False
- Subc. Whole Brain  0.7264 0.4796       1.0  False
-   VAN        Vis.  4.2633 0.0008    0.0394   True
-   VAN Whole Brain  2.0535 0.0592       1.0  False
-  Vis. Whole Brain -4.7813 0.0003    0.0155   True
+   DAN Whole Brain  4.1624  0.001    0.0071   True
+   DMN         FPN  0.9954 0.3364    0.4406  False
+   DMN       Motor -1.3346 0.2033    0.3289  False
+   DMN         SAN -0.3697 0.7172    0.7734  False
+   DMN       Subc.  0.0257 0.9799    0.9799  False
+   DMN         VAN -1.2519 0.2311    0.3425  False
+   DMN        Vis.  4.1236  0.001    0.0071   True
+   DMN Whole Brain  1.3399 0.2016    0.3289  False
+   FPN       Motor -1.9303 0.0741    0.1698  False
+   FPN         SAN -1.4763  0.162    0.2874  False
+   FPN       Subc. -1.2024 0.2492    0.3514  False
+   FPN         VAN -2.3884 0.0316    0.1085  False
+   FPN        Vis.  1.6659 0.1179    0.2464  False
+   FPN Whole Brain -0.6826  0.506    0.5798  False
+ Motor         SAN  0.7854 0.4453    0.5566  False
+ Motor       Subc.  1.2364 0.2366    0.3425  False
+ Motor         VAN -0.4106 0.6876    0.7718  False
+ Motor        Vis.  4.7403 0.0003    0.0043   True
+ Motor Whole Brain  3.2714 0.0056    0.0236   True
+   SAN       Subc.   0.282 0.7821    0.8116  False
+   SAN         VAN -1.2811  0.221    0.3425  False
+   SAN        Vis.  4.3186 0.0007    0.0071   True
+   SAN Whole Brain  1.5229   0.15    0.2751  False
+ Subc.         VAN -1.0534   0.31    0.4159  False
+ Subc.        Vis.  2.5288 0.0241    0.0883  False
+ Subc. Whole Brain  0.7264 0.4796    0.5798  False
+   VAN        Vis.  4.2633 0.0008    0.0071   True
+   VAN Whole Brain  2.0535 0.0592     0.148  False
+  Vis. Whole Brain -4.7813 0.0003    0.0043   True
 --------------------------------------------------
 (array([[ 4.91937791e+00,  2.25976532e-04],
        [-1.25743470e+00,  2.29168047e-01],
@@ -114,75 +114,75 @@ group1    group2     stat   pval  pval_corr reject
        [ 7.26354736e-01,  4.79590159e-01],
        [ 4.26325769e+00,  7.87636223e-04],
        [ 2.05350049e+00,  5.91974339e-02],
-       [-4.78128172e+00,  2.92687748e-04]]), array([ True, False, False, False, False, False, False, False, False,
-       False, False, False, False, False, False, False, False, False,
-       False, False, False, False, False, False, False,  True,  True,
+       [-4.78128172e+00,  2.92687748e-04]]), array([ True, False, False, False, False, False, False, False,  True,
+       False,  True,  True, False,  True, False, False, False, False,
+       False, False,  True, False, False, False, False,  True,  True,
        False, False, False, False, False,  True, False, False, False,
-       False, False, False, False, False, False, False,  True, False,
+       False, False, False, False, False, False, False,  True,  True,
        False, False,  True, False, False, False, False,  True, False,
-        True]), array([0.01220273, 1.        , 1.        , 1.        , 1.        ,
-       1.        , 1.        , 1.        , 0.13869068, 1.        ,
-       0.0544446 , 0.12943238, 1.        , 0.37737297, 1.        ,
-       1.        , 1.        , 1.        , 1.        , 1.        ,
-       0.13869068, 1.        , 1.        , 1.        , 1.        ,
-       0.00108707, 0.04694707, 1.        , 1.        , 1.        ,
-       1.        , 1.        , 0.04960498, 1.        , 1.        ,
-       1.        , 1.        , 1.        , 1.        , 1.        ,
-       1.        , 1.        , 1.        , 0.01644236, 0.23950602,
-       1.        , 1.        , 0.03608727, 1.        , 1.        ,
-       0.98763133, 1.        , 0.03938181, 1.        , 0.01551245]), 0.0009321706112870309, 0.0009090909090909091)
-[('Aud.', 'CON',  4.9194, 2.000e-04, 0.0122,  True)
- ('Aud.', 'DAN', -1.2574, 2.292e-01, 1.    , False)
- ('Aud.', 'DMN',  1.651 , 1.210e-01, 1.    , False)
- ('Aud.', 'FPN',  1.5548, 1.423e-01, 1.    , False)
- ('Aud.', 'Motor',  0.0611, 9.521e-01, 1.    , False)
- ('Aud.', 'SAN',  0.7029, 4.937e-01, 1.    , False)
- ('Aud.', 'Subc.',  0.9669, 3.500e-01, 1.    , False)
- ('Aud.', 'VAN', -0.2839, 7.806e-01, 1.    , False)
- ('Aud.', 'Vis.',  3.5691, 3.100e-03, 0.1387, False)
- ('Aud.', 'Whole Brain',  2.2183, 4.360e-02, 1.    , False)
- ('CON', 'DAN', -4.0652, 1.200e-03, 0.0544, False)
- ('CON', 'DMN', -3.615 , 2.800e-03, 0.1294, False)
- ('CON', 'FPN', -0.3907, 7.019e-01, 1.    , False)
- ('CON', 'Motor', -3.0308, 9.000e-03, 0.3774, False)
- ('CON', 'SAN', -2.1053, 5.380e-02, 1.    , False)
- ('CON', 'Subc.', -1.4555, 1.676e-01, 1.    , False)
- ('CON', 'VAN', -2.2396, 4.190e-02, 1.    , False)
- ('CON', 'Vis.',  1.1384, 2.741e-01, 1.    , False)
- ('CON', 'Whole Brain', -1.6991, 1.114e-01, 1.    , False)
- ('DAN', 'DMN',  2.2683, 3.970e-02, 1.    , False)
- ('DAN', 'FPN',  3.5588, 3.100e-03, 0.1387, False)
- ('DAN', 'Motor',  1.5857, 1.351e-01, 1.    , False)
- ('DAN', 'SAN',  2.068 , 5.760e-02, 1.    , False)
- ('DAN', 'Subc.',  1.968 , 6.920e-02, 1.    , False)
- ('DAN', 'VAN',  0.6919, 5.003e-01, 1.    , False)
+        True]), array([0.00434774, 0.34251841, 0.24644175, 0.26990044, 0.96975732,
+       0.57976497, 0.4476892 , 0.81157947, 0.01441574, 0.12613979,
+       0.00707908, 0.01441574, 0.77209956, 0.03529849, 0.1479527 ,
+       0.28803006, 0.12613979, 0.37685062, 0.24508535, 0.12613979,
+       0.01441574, 0.26542558, 0.14799358, 0.16547716, 0.57976497,
+       0.00108707, 0.00707908, 0.44055025, 0.32886878, 0.77340658,
+       0.97987579, 0.34251841, 0.00707908, 0.32886878, 0.16975557,
+       0.28742355, 0.35137872, 0.10850418, 0.24644175, 0.57976497,
+       0.55664164, 0.34251841, 0.77180773, 0.00434774, 0.02356499,
+       0.81157947, 0.34251841, 0.00707908, 0.2750833 , 0.41587409,
+       0.08832475, 0.57976497, 0.00707908, 0.14799358, 0.00434774]), 0.0009321706112870309, 0.0009090909090909091)
+[('Aud.', 'CON',  4.9194, 2.000e-04, 0.0043,  True)
+ ('Aud.', 'DAN', -1.2574, 2.292e-01, 0.3425, False)
+ ('Aud.', 'DMN',  1.651 , 1.210e-01, 0.2464, False)
+ ('Aud.', 'FPN',  1.5548, 1.423e-01, 0.2699, False)
+ ('Aud.', 'Motor',  0.0611, 9.521e-01, 0.9698, False)
+ ('Aud.', 'SAN',  0.7029, 4.937e-01, 0.5798, False)
+ ('Aud.', 'Subc.',  0.9669, 3.500e-01, 0.4477, False)
+ ('Aud.', 'VAN', -0.2839, 7.806e-01, 0.8116, False)
+ ('Aud.', 'Vis.',  3.5691, 3.100e-03, 0.0144,  True)
+ ('Aud.', 'Whole Brain',  2.2183, 4.360e-02, 0.1261, False)
+ ('CON', 'DAN', -4.0652, 1.200e-03, 0.0071,  True)
+ ('CON', 'DMN', -3.615 , 2.800e-03, 0.0144,  True)
+ ('CON', 'FPN', -0.3907, 7.019e-01, 0.7721, False)
+ ('CON', 'Motor', -3.0308, 9.000e-03, 0.0353,  True)
+ ('CON', 'SAN', -2.1053, 5.380e-02, 0.148 , False)
+ ('CON', 'Subc.', -1.4555, 1.676e-01, 0.288 , False)
+ ('CON', 'VAN', -2.2396, 4.190e-02, 0.1261, False)
+ ('CON', 'Vis.',  1.1384, 2.741e-01, 0.3769, False)
+ ('CON', 'Whole Brain', -1.6991, 1.114e-01, 0.2451, False)
+ ('DAN', 'DMN',  2.2683, 3.970e-02, 0.1261, False)
+ ('DAN', 'FPN',  3.5588, 3.100e-03, 0.0144,  True)
+ ('DAN', 'Motor',  1.5857, 1.351e-01, 0.2654, False)
+ ('DAN', 'SAN',  2.068 , 5.760e-02, 0.148 , False)
+ ('DAN', 'Subc.',  1.968 , 6.920e-02, 0.1655, False)
+ ('DAN', 'VAN',  0.6919, 5.003e-01, 0.5798, False)
  ('DAN', 'Vis.',  6.2936, 0.000e+00, 0.0011,  True)
- ('DAN', 'Whole Brain',  4.1624, 1.000e-03, 0.0469,  True)
- ('DMN', 'FPN',  0.9954, 3.364e-01, 1.    , False)
- ('DMN', 'Motor', -1.3346, 2.033e-01, 1.    , False)
- ('DMN', 'SAN', -0.3697, 7.172e-01, 1.    , False)
- ('DMN', 'Subc.',  0.0257, 9.799e-01, 1.    , False)
- ('DMN', 'VAN', -1.2519, 2.311e-01, 1.    , False)
- ('DMN', 'Vis.',  4.1236, 1.000e-03, 0.0496,  True)
- ('DMN', 'Whole Brain',  1.3399, 2.016e-01, 1.    , False)
- ('FPN', 'Motor', -1.9303, 7.410e-02, 1.    , False)
- ('FPN', 'SAN', -1.4763, 1.620e-01, 1.    , False)
- ('FPN', 'Subc.', -1.2024, 2.492e-01, 1.    , False)
- ('FPN', 'VAN', -2.3884, 3.160e-02, 1.    , False)
- ('FPN', 'Vis.',  1.6659, 1.179e-01, 1.    , False)
- ('FPN', 'Whole Brain', -0.6826, 5.060e-01, 1.    , False)
- ('Motor', 'SAN',  0.7854, 4.453e-01, 1.    , False)
- ('Motor', 'Subc.',  1.2364, 2.366e-01, 1.    , False)
- ('Motor', 'VAN', -0.4106, 6.876e-01, 1.    , False)
- ('Motor', 'Vis.',  4.7403, 3.000e-04, 0.0164,  True)
- ('Motor', 'Whole Brain',  3.2714, 5.600e-03, 0.2395, False)
- ('SAN', 'Subc.',  0.282 , 7.821e-01, 1.    , False)
- ('SAN', 'VAN', -1.2811, 2.210e-01, 1.    , False)
- ('SAN', 'Vis.',  4.3186, 7.000e-04, 0.0361,  True)
- ('SAN', 'Whole Brain',  1.5229, 1.500e-01, 1.    , False)
- ('Subc.', 'VAN', -1.0534, 3.100e-01, 1.    , False)
- ('Subc.', 'Vis.',  2.5288, 2.410e-02, 0.9876, False)
- ('Subc.', 'Whole Brain',  0.7264, 4.796e-01, 1.    , False)
- ('VAN', 'Vis.',  4.2633, 8.000e-04, 0.0394,  True)
- ('VAN', 'Whole Brain',  2.0535, 5.920e-02, 1.    , False)
- ('Vis.', 'Whole Brain', -4.7813, 3.000e-04, 0.0155,  True)]
+ ('DAN', 'Whole Brain',  4.1624, 1.000e-03, 0.0071,  True)
+ ('DMN', 'FPN',  0.9954, 3.364e-01, 0.4406, False)
+ ('DMN', 'Motor', -1.3346, 2.033e-01, 0.3289, False)
+ ('DMN', 'SAN', -0.3697, 7.172e-01, 0.7734, False)
+ ('DMN', 'Subc.',  0.0257, 9.799e-01, 0.9799, False)
+ ('DMN', 'VAN', -1.2519, 2.311e-01, 0.3425, False)
+ ('DMN', 'Vis.',  4.1236, 1.000e-03, 0.0071,  True)
+ ('DMN', 'Whole Brain',  1.3399, 2.016e-01, 0.3289, False)
+ ('FPN', 'Motor', -1.9303, 7.410e-02, 0.1698, False)
+ ('FPN', 'SAN', -1.4763, 1.620e-01, 0.2874, False)
+ ('FPN', 'Subc.', -1.2024, 2.492e-01, 0.3514, False)
+ ('FPN', 'VAN', -2.3884, 3.160e-02, 0.1085, False)
+ ('FPN', 'Vis.',  1.6659, 1.179e-01, 0.2464, False)
+ ('FPN', 'Whole Brain', -0.6826, 5.060e-01, 0.5798, False)
+ ('Motor', 'SAN',  0.7854, 4.453e-01, 0.5566, False)
+ ('Motor', 'Subc.',  1.2364, 2.366e-01, 0.3425, False)
+ ('Motor', 'VAN', -0.4106, 6.876e-01, 0.7718, False)
+ ('Motor', 'Vis.',  4.7403, 3.000e-04, 0.0043,  True)
+ ('Motor', 'Whole Brain',  3.2714, 5.600e-03, 0.0236,  True)
+ ('SAN', 'Subc.',  0.282 , 7.821e-01, 0.8116, False)
+ ('SAN', 'VAN', -1.2811, 2.210e-01, 0.3425, False)
+ ('SAN', 'Vis.',  4.3186, 7.000e-04, 0.0071,  True)
+ ('SAN', 'Whole Brain',  1.5229, 1.500e-01, 0.2751, False)
+ ('Subc.', 'VAN', -1.0534, 3.100e-01, 0.4159, False)
+ ('Subc.', 'Vis.',  2.5288, 2.410e-02, 0.0883, False)
+ ('Subc.', 'Whole Brain',  0.7264, 4.796e-01, 0.5798, False)
+ ('VAN', 'Vis.',  4.2633, 8.000e-04, 0.0071,  True)
+ ('VAN', 'Whole Brain',  2.0535, 5.920e-02, 0.148 , False)
+ ('Vis.', 'Whole Brain', -4.7813, 3.000e-04, 0.0043,  True)]
