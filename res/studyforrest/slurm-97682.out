@@ -1,0 +1,198 @@
+In flexiblehubs_1jobPoolSubjsSF parameters CHUNKLEN=30
+Starting stage 4 **Calculate statistics** at 2021-06-14 14:15:30.382973
+     subject         net1   net2   MeanBVC
+0     sub-01          FPN    CON  0.287515
+1     sub-01          FPN    SAN  0.287271
+2     sub-01          FPN    VAN  0.287675
+3     sub-01          FPN    DAN  0.288425
+4     sub-01          FPN    DMN  0.287147
+...      ...          ...    ...       ...
+1645  sub-20  Whole Brain    DMN  0.309233
+1646  sub-20  Whole Brain  Motor  0.323673
+1647  sub-20  Whole Brain   Aud.  0.311690
+1648  sub-20  Whole Brain   Vis.  0.313402
+1649  sub-20  Whole Brain  Subc.  0.318510
+
+[1650 rows x 4 columns]
+    subject         net2   MeanBVC
+0    sub-01         Aud.  0.315727
+1    sub-01          CON  0.313673
+2    sub-01          DAN  0.312548
+3    sub-01          DMN  0.313758
+4    sub-01          FPN  0.308566
+..      ...          ...       ...
+160  sub-20          SAN  0.317551
+161  sub-20        Subc.  0.313406
+162  sub-20          VAN  0.320402
+163  sub-20         Vis.  0.308970
+164  sub-20  Whole Brain  0.312047
+
+[165 rows x 3 columns]
+Anova results for BVC
+             df    sum_sq   mean_sq         F    PR(>F)
+C(net2)    10.0  0.000802  0.000080  4.578369  0.000011
+Residual  154.0  0.002699  0.000018       NaN       NaN
+T-test results for BVC
+Test Multiple Comparison ttest_rel 
+FWER=0.05 method=Holm
+alphacSidak=0.00, alphacBonf=0.001
+==================================================
+group1    group2     stat   pval  pval_corr reject
+--------------------------------------------------
+  Aud.         CON  3.7645 0.0021    0.1088  False
+  Aud.         DAN -2.1084 0.0535       1.0  False
+  Aud.         DMN  1.4196 0.1776       1.0  False
+  Aud.         FPN  0.5731 0.5757       1.0  False
+  Aud.       Motor -1.5206 0.1506       1.0  False
+  Aud.         SAN -0.2732 0.7887       1.0  False
+  Aud.       Subc.  0.2052 0.8404       1.0  False
+  Aud.         VAN -1.5217 0.1503       1.0  False
+  Aud.        Vis.  1.8761 0.0816       1.0  False
+  Aud. Whole Brain  0.8606 0.4039       1.0  False
+   CON         DAN -3.7337 0.0022    0.1112  False
+   CON         DMN -3.7632 0.0021    0.1088  False
+   CON         FPN -0.7405 0.4712       1.0  False
+   CON       Motor -3.3996 0.0043    0.1986  False
+   CON         SAN -2.3488  0.034       1.0  False
+   CON       Subc. -1.5292 0.1485       1.0  False
+   CON         VAN -3.1037 0.0078    0.3499  False
+   CON        Vis. -0.3087 0.7621       1.0  False
+   CON Whole Brain -2.1068 0.0537       1.0  False
+   DAN         DMN  2.8331 0.0133    0.5713  False
+   DAN         FPN  3.5817  0.003    0.1443  False
+   DAN       Motor  1.4203 0.1774       1.0  False
+   DAN         SAN  2.1108 0.0533       1.0  False
+   DAN       Subc.  2.4707 0.0269       1.0  False
+   DAN         VAN   0.067 0.9476       1.0  False
+   DAN        Vis.  5.3669 0.0001    0.0055   True
+   DAN Whole Brain  4.1003 0.0011    0.0584  False
+   DMN         FPN  0.1096 0.9143       1.0  False
+   DMN       Motor -2.3987 0.0309       1.0  False
+   DMN         SAN -1.2891 0.2183       1.0  False
+   DMN       Subc. -0.4601 0.6525       1.0  False
+   DMN         VAN -2.4887  0.026       1.0  False
+   DMN        Vis.  1.5962 0.1328       1.0  False
+   DMN Whole Brain -0.3133 0.7586       1.0  False
+   FPN       Motor -1.7549 0.1011       1.0  False
+   FPN         SAN -0.9678 0.3496       1.0  False
+   FPN       Subc. -0.7213 0.4826       1.0  False
+   FPN         VAN -2.1366 0.0508       1.0  False
+   FPN        Vis.  0.8361 0.4171       1.0  False
+   FPN Whole Brain -0.3051 0.7648       1.0  False
+ Motor         SAN  1.0918 0.2934       1.0  False
+ Motor       Subc.  1.8289 0.0888       1.0  False
+ Motor         VAN -0.8274 0.4219       1.0  False
+ Motor        Vis.   3.827 0.0018     0.098  False
+ Motor Whole Brain  3.6909 0.0024    0.1186  False
+   SAN       Subc.  0.4832 0.6364       1.0  False
+   SAN         VAN -2.0188 0.0631       1.0  False
+   SAN        Vis.   2.912 0.0114    0.5003  False
+   SAN Whole Brain  1.4428 0.1711       1.0  False
+ Subc.         VAN -1.6865 0.1139       1.0  False
+ Subc.        Vis.  1.4713 0.1633       1.0  False
+ Subc. Whole Brain  0.4504 0.6593       1.0  False
+   VAN        Vis.  3.5175 0.0034    0.1605  False
+   VAN Whole Brain  2.5398 0.0236    0.9668  False
+  Vis. Whole Brain -2.7819 0.0147    0.6171  False
+--------------------------------------------------
+Figure saved as RainViolinPlotBVCreg.png
+Figure saved as ViolinPlotBVC.png
+Figure saved as BarPlotBVC.png
+     subject         net1         net2   MeanGVC
+0     sub-01          FPN          FPN  0.269788
+1     sub-01          FPN          CON  0.287515
+2     sub-01          FPN          SAN  0.287271
+3     sub-01          FPN          VAN  0.287675
+4     sub-01          FPN          DAN  0.288425
+...      ...          ...          ...       ...
+1810  sub-20  Whole Brain        Motor  0.323673
+1811  sub-20  Whole Brain         Aud.  0.311690
+1812  sub-20  Whole Brain         Vis.  0.313402
+1813  sub-20  Whole Brain        Subc.  0.318510
+1814  sub-20  Whole Brain  Whole Brain  0.317580
+
+[1815 rows x 4 columns]
+    subject         net2   MeanGVC
+0    sub-01         Aud.  0.313531
+1    sub-01          CON  0.311490
+2    sub-01          DAN  0.310692
+3    sub-01          DMN  0.313584
+4    sub-01          FPN  0.306312
+..      ...          ...       ...
+160  sub-20          SAN  0.316405
+161  sub-20        Subc.  0.312352
+162  sub-20          VAN  0.317114
+163  sub-20         Vis.  0.307603
+164  sub-20  Whole Brain  0.312036
+
+[165 rows x 3 columns]
+Anova results for GVC
+             df    sum_sq   mean_sq         F    PR(>F)
+C(net2)    10.0  0.000753  0.000075  3.749392  0.000158
+Residual  154.0  0.003092  0.000020       NaN       NaN
+T-test results for GVC
+Test Multiple Comparison ttest_rel 
+FWER=0.05 method=Holm
+alphacSidak=0.00, alphacBonf=0.001
+==================================================
+group1    group2     stat   pval  pval_corr reject
+--------------------------------------------------
+  Aud.         CON  3.0749 0.0082    0.3869  False
+  Aud.         DAN -2.4121 0.0302       1.0  False
+  Aud.         DMN -0.8423 0.4138       1.0  False
+  Aud.         FPN  0.3942 0.6994       1.0  False
+  Aud.       Motor -2.3098 0.0367       1.0  False
+  Aud.         SAN -0.9928 0.3377       1.0  False
+  Aud.       Subc. -0.2344  0.818       1.0  False
+  Aud.         VAN -1.0751 0.3005       1.0  False
+  Aud.        Vis.  0.9555 0.3555       1.0  False
+  Aud. Whole Brain -1.3125 0.2104       1.0  False
+   CON         DAN -3.8453 0.0018    0.0892  False
+   CON         DMN -6.3158    0.0     0.001   True
+   CON         FPN -0.7928 0.4411       1.0  False
+   CON       Motor -3.8627 0.0017    0.0879  False
+   CON         SAN -2.8654 0.0125    0.5655  False
+   CON       Subc.  -1.736 0.1045       1.0  False
+   CON         VAN -2.4905 0.0259       1.0  False
+   CON        Vis. -0.9625 0.3521       1.0  False
+   CON Whole Brain -3.9013 0.0016    0.0831  False
+   DAN         DMN  2.0595 0.0585       1.0  False
+   DAN         FPN  3.7688 0.0021    0.1017  False
+   DAN       Motor  0.9983 0.3351       1.0  False
+   DAN         SAN  1.6673 0.1177       1.0  False
+   DAN       Subc.  2.3639 0.0331       1.0  False
+   DAN         VAN  0.7175 0.4849       1.0  False
+   DAN        Vis.  4.7173 0.0003    0.0178   True
+   DAN Whole Brain  2.5788 0.0219    0.9618  False
+   DMN         FPN  0.7802 0.4483       1.0  False
+   DMN       Motor -1.7889 0.0953       1.0  False
+   DMN         SAN -0.7299 0.4775       1.0  False
+   DMN       Subc.  0.2127 0.8346       1.0  False
+   DMN         VAN -0.9839 0.3419       1.0  False
+   DMN        Vis.  2.1657 0.0481       1.0  False
+   DMN Whole Brain -0.9065   0.38       1.0  False
+   FPN       Motor -2.1782  0.047       1.0  False
+   FPN         SAN -1.4494 0.1693       1.0  False
+   FPN       Subc. -0.8862 0.3905       1.0  False
+   FPN         VAN -1.5322 0.1477       1.0  False
+   FPN        Vis.  0.3733 0.7145       1.0  False
+   FPN Whole Brain -1.5457 0.1445       1.0  False
+ Motor         SAN  1.0189 0.3255       1.0  False
+ Motor       Subc.  2.2559 0.0406       1.0  False
+ Motor         VAN  0.1573 0.8773       1.0  False
+ Motor        Vis.  3.6951 0.0024    0.1152  False
+ Motor Whole Brain  2.0978 0.0546       1.0  False
+   SAN       Subc.  0.8075 0.4329       1.0  False
+   SAN         VAN  -0.636  0.535       1.0  False
+   SAN        Vis.  2.8724 0.0123    0.5655  False
+   SAN Whole Brain  0.1933 0.8495       1.0  False
+ Subc.         VAN  -0.951 0.3577       1.0  False
+ Subc.        Vis.  1.1465 0.2708       1.0  False
+ Subc. Whole Brain -0.8941 0.3864       1.0  False
+   VAN        Vis.   2.235 0.0422       1.0  False
+   VAN Whole Brain  0.6683 0.5148       1.0  False
+  Vis. Whole Brain -4.2212 0.0009    0.0453   True
+--------------------------------------------------
+Figure saved as RainViolinPlotGVC.png
+Figure saved as ViolinPlotGVC30.png
+Figure saved as BarPlotGVC30.png
