@@ -251,9 +251,9 @@ class poolsubjs:
 
         
         # Create a custom color palette for graphs for #CC REG BVC "Motor", "Aud.", "FPN", "DMN", "Subc.", "Vis.", "SAN", "CON", "VAN", "DAN"])
-        colors = ["#31A8F1", "#F131DF", "#F7EA23", "#F31111", "#950707", "#1B56A6", "#000000", "#B51DA3", "#5692BF", "#1DB526"]
+        #colors = ["#31A8F1", "#F131DF", "#F7EA23", "#F31111", "#950707", "#1B56A6", "#000000", "#B51DA3", "#5692BF", "#1DB526"]
         # Set the custom color palette
-        custom_pBVCregCC = sns.set_palette(sns.color_palette(colors))
+        #custom_pBVCregCC = sns.set_palette(sns.color_palette(colors))
         
         
         
@@ -307,15 +307,15 @@ class poolsubjs:
             
         
         # Violin with dots on the side CC REG BVC
-        plt.figure()
-        f, ax = plt.subplots(figsize=(7, 5))
-        ax=pt.half_violinplot(x = "net2", y = "MeanBVC", data = dfmean, palette=custom_pBVCregCC, scale='area', linewidth=0, order=["Motor", "Aud.", "FPN", "DMN", "Subc.", "Vis.", "SAN", "CON", "VAN", "DAN"])
-        ax=sns.stripplot(x = "net2", y = "MeanBVC", data = dfmean, edgecolor = "white", size = 3, jitter = 1, zorder = 0, palette=custom_pBVCregCC, order=["Motor", "Aud.", "FPN", "DMN", "Subc.", "Vis.", "SAN", "CON", "VAN", "DAN"])
-        plt.ylim(0, 0.65)
-        plt.xlabel('')
-        ax.set_ylabel("Mean BVC", fontsize=16)
-        plt.title('BVC')
-        plt.savefig((os.path.join(self.resultspth,'DoubleViolinPlotOrderBVCregCC%d'%(chunklen) + '.png')), dpi=200)
+        #plt.figure()
+        #f, ax = plt.subplots(figsize=(7, 5))
+        #ax=pt.half_violinplot(x = "net2", y = "MeanBVC", data = dfmean, palette=custom_pBVCregCC, scale='area', linewidth=0, order=["Motor", "Aud.", "FPN", "DMN", "Subc.", "Vis.", "SAN", "CON", "VAN", "DAN"])
+        #ax=sns.stripplot(x = "net2", y = "MeanBVC", data = dfmean, edgecolor = "white", size = 3, jitter = 1, zorder = 0, palette=custom_pBVCregCC, order=["Motor", "Aud.", "FPN", "DMN", "Subc.", "Vis.", "SAN", "CON", "VAN", "DAN"])
+        #plt.ylim(0, 0.65)
+        #plt.xlabel('')
+        #ax.set_ylabel("Mean BVC", fontsize=16)
+        #plt.title('BVC')
+        #plt.savefig((os.path.join(self.resultspth,'DoubleViolinPlotOrderBVCregCC%d'%(chunklen) + '.png')), dpi=200)
         
 
         # Violin plot
