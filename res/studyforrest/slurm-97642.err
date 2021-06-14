@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "/camcan/FPNflexiblehubs/FPNflexiblehubs/flexiblehubsrunPoolSubjsSF.py", line 2, in <module>
+    import PoolSubjs
+  File "/camcan/FPNflexiblehubs/FPNflexiblehubs/PoolSubjs.py", line 464
+    plt.savefig((os.path.join(self.resultspth,'MatrixGVCReg%d'%(chunklen) + '.png')), dpi=200)
+    ^
+IndentationError: expected an indented block
