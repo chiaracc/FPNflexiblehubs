@@ -418,7 +418,7 @@ class poolsubjs:
 
         ###### TTEST GVC ######
         mod = MultiComparison(dfmean['MeanGVC'], dfmean['net2'])
-        comp = mod.allpairtest(stats.ttest_rel, method='Holm')
+        comp = mod.allpairtest(stats.ttest_rel, method='fdr_bh')
         print ("T-test results for GVC")
         print(comp[0])
         if corr==1:
