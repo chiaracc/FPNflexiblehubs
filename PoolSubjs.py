@@ -188,7 +188,7 @@ class poolsubjs:
 
         ###### TTEST BVC ######
         mod = MultiComparison(dfmean['MeanBVC'], dfmean['net2'])
-        comp = mod.allpairtest(stats.ttest_rel, method='Holm')
+        comp = mod.allpairtest(stats.ttest_rel, method='fdr_bh')
         print ("T-test results for BVC")
         print(comp[0])
         # Save results
@@ -197,6 +197,8 @@ class poolsubjs:
         else:
             np.savetxt((os.path.join(self.resultspth,'ResultsMultipleComparisonBVCreg%d'%(chunklen) + '.txt')), comp, fmt='%s')
         
+
+
         # Matrix plot 
         plt.figure()
         net=list(set(dfmean['net2']))
